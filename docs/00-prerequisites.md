@@ -155,4 +155,32 @@ This step will create a configuration file in `~.aws/credential`. Before to star
 export AWS_PROFILE=default // <your-profile-name>
 ```
 
-There is, now we can manage our AWS service from the CLI.
+There is, now we can manage our AWS service from the CLI. Now let's check the last technology in the list; AWS Serverless Application Model (SAM). This tech is a toolkit to improves the developer experience of building and running serverless applications on AWS. It is composed by:
+
+1. [AWS SAM template specification](https://github.com/aws/aws-sam-cli-app-templates): An open source framework that you can use to define the serverless application infrastructure.
+2. AWS SAM command line interface: A command line tool to consume the templates and supported third-party integrations to build and run serverless applications.
+
+
+To install AWS SAM download the macOS package in your files system according your processor architecture:
+
+- [aws-sam-cli-x86_64.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg)
+- [aws-sam-cli-arm64.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-arm64.pkg)
+
+Run the standard macOS installer program specifying the name that we define for the package:
+
+```
+sudo installer -pkg ./aws-sam-cli-x86_65.pkg -target /
+```
+
+To verify that AWS SAM CLI was properly installed run:
+
+```
+sam --version
+```
+
+The expected output should be:
+
+```
+SAM CLI, version 1.97.0
+```
+
