@@ -147,4 +147,22 @@ When you check the dynamo table you should see a new row with the event informat
 Integrating lambda with API Gateway
 -----------------------------------
 
-- [ ] TODO: Add contents
+Let's integrate the created lambda with a API Gateway event. Please follow the next steps:
+
+1. Click on the search bar.
+2. Type API.
+3. Click on the **API Gateway** service.
+4. Click on the **Create API**.
+5. In the **Create an API** forum fill with the next contents:
+  - In the Integrations section chose "Lambda"
+  - In the lambda function select the "createUser"
+  - Enter an API name (e.g., api-crud-user)
+6. Click on the **Next** button.
+7. In the **Configure routes** section fill with the next contents:
+  - Method: POST
+  - Path: user
+8. Click on the **Next** button.
+9. In the **Review and Create** section validate the setup.
+10. Click on **Create** button.
+
+Our API Gateway is already created.
