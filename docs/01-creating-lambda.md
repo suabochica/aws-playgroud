@@ -166,3 +166,31 @@ Let's integrate the created lambda with a API Gateway event. Please follow the n
 10. Click on **Create** button.
 
 Our API Gateway is already created.
+
+Testing endpoint
+----------------
+
+Now is time to test our endpoint. Please chekc the next instructions:
+
+1. Click on the search bar.
+2. Type Lambda.
+3. Click on the **Lambda** service.
+4. Look for the **createUser** lambda (lambda create before).
+5. Navigate to the **Configuration** tab.
+6. Look for the **Triggers** section on the sidebar.
+7. Click on **Triggers**.
+8. Check here the API endpoint value.
+9. Copy this url.
+
+Now we need a REST API client. For practical purpose, in this guide we will use cURL. Please run the next command in your terminal:
+
+```
+curl -H "Content-Type: application/json" \
+  -X POST -d '{ "id": "6", "name": "javier", "email": "javier.jimenez@adidas.com" }' https://<your_url>.execute-api.us-west-2.amazonaws.com/user
+```
+
+> Note: replace `<your_url>` for the url copied in the step 9 of the previous list.
+
+If everything works as expected, you should see the rows in the dynamo table as show the next image:
+
+![User-jose table](../assets/03-dynamo-db.png)
