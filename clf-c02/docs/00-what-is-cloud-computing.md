@@ -56,3 +56,24 @@ To sum up, here are the problems solved by the cloud:
 - **Elasticity**: ability to scale out and scale in when needed.
 - **High-Availability**: build across data centers
 - **Agility**: rapidly develop, test and launch software applications.
+
+Types of Cloud Computing
+------------------------
+
+Infrastructure as a Service (IaaS) provide building blocks for cloud IT like networking, computers, data storage space and leverage a high level of flexibility. In short is a parallel with traditional on-premises IT. (e.g., Amazon EC2, GCP, Azure and Digital Ocean).
+
+Platform as a Services (PaaS) removes the need for your organization to manage the underlying infrastructure, focus on the deploymen and management of your applications (e.g., Elastic Beanstalk and Heroku)
+
+The last one is Software as a Service (SaaS), that is a complete product that is run and manages by the service provider (Google Apps, Dropbox and Zoom).
+
+Below is an image to show the management of responsibilities according the type of cloud computing:
+
+![Cloud Computing Types Responsibilities](../assets/images/00G-cc-types.png).
+
+Keep in mind that the pricing of the cloud with AWS is based on 3 fundamentals under the pay-as-you-go model:
+
+- Compute
+- Storage
+- Data transfer out of the cloud
+
+This solve the expensive issue of traditional IT.
