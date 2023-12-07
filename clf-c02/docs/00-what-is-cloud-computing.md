@@ -104,3 +104,14 @@ The AWS availability zones are discrete data centers with redundant power, netwo
 ![AWS Availability Zones](../assets/images/00I-cc-az.png)
 
 Finally Amazon has 400+ edge location (a.k.a. points of presence) in 90+ cities across 40+ countries. The content is delivered to end users with lower latency. With this map, keep in mind that AWS has global services like Identity and Access Management (IAM), Route 53 (DNS service), CloudFront (Content Delivery Network), etc. Then most of services are region-scoped like Amazon EC2 (IaaS), Elastic Beanstalk (PaaS), Lambda (FaaS), etc.
+
+Please check the [region table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4) to check availability of a service in a specific region.
+
+Shared Responsibility Model Diagram
+-----------------------------------
+
+It is important know the agreement between the responsibilities of the customer and the responsibilities of AWS at the momento of use AWS. The next diagram is a summary of these responsibilities.
+
+![Alt text](../assets/images/00J-cc-shared-responsibility.png)
+
+Also, please check the [AWS acceptable use policy](https://aws.amazon.com/aup/).
