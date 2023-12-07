@@ -77,3 +77,30 @@ Keep in mind that the pricing of the cloud with AWS is based on 3 fundamentals u
 - Data transfer out of the cloud
 
 This solve the expensive issue of traditional IT.
+
+AWS Cloud Overview
+------------------
+
+Let's start with a timeline about how AWS start to be positioned in the IT market:
+
+![AWS Timeline](../assets/images/00H-cc-aws-timeline.png)
+
+As we can see, nowadays popular applications are supported by AWS after a cycles that started in United States, and later were propagated to another locations in the world, consolidating then the current [AWS global infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/) that are compose for the next categories:
+
+- AWS regions
+- AWS availability zones
+- AWS data centers
+- AWS edge locations
+
+AWS has regions around the world, that should be have names like `us-eas-1`, `eu-west-3`, etc. In short, a region is a cluster of data centers, and a key characteristic is that most of the AWS services are regions scoped. So, this scenario open to us the next question; How to choose an AWS region? Below some criteria to aboard this selection:
+
+- **Compliance** with data governance and legal requirements; data never leaves a region without your explicit permission.
+- **Proximity** to customers to reduce latency.
+- **Available services** within a region; new services and new features are not available in every region.
+- **Pricing** varies region to region and is transparent in the pricing page.
+
+The AWS availability zones are discrete data centers with redundant power, networking and connectivity. They are connected with high bandwidth and ultra low latency networking. Each region has several availability zones and they are separated from each other to mitigate disasters. The next image illustrate the relation between a region and an availability zone:
+
+![AWS Availability Zones](../assets/images/00I-cc-az.png)
+
+Finally Amazon has 400+ edge location (a.k.a. points of presence) in 90+ cities across 40+ countries. The content is delivered to end users with lower latency. With this map, keep in mind that AWS has global services like Identity and Access Management (IAM), Route 53 (DNS service), CloudFront (Content Delivery Network), etc. Then most of services are region-scoped like Amazon EC2 (IaaS), Elastic Beanstalk (PaaS), Lambda (FaaS), etc.
