@@ -81,3 +81,43 @@ To go deep with the policies yoy can click in the **Policies** section in the si
 ![Policies](../assets/images/01D-policies.png)
 
 It is important to know that you can create your own policy via a visual editor or creating you own JSON policy file. The invitation is open to get detailed information about the list of policies that AWS offer to us.
+
+IAM Security on Users
+---------------------
+
+AWS offers two mechanism to handle authentication and authorization for the users; **passwords** and **multi-factor authenticator (a.k.a MFA)**.
+
+With passwords we should encourage strong ones for higher security for your account. AWS allows to setup a password policy with stuff like a minimum password length, requires specific character types, allow all IAM users to change their own passwords, define periods of time for password expiration and prevent password re-use. This mechanism is good for IAM Users.
+
+In the other hand, we have MFA for users that have access to your account and can possibly change configurations or delete resources in your AWS account. The idea is protect your root accounts and IAM users. MFA is the combination of a password you know, plus security device you own. The main benefit of MFA is that if a password is stolen or hacked, the account is not compromised.
+
+There are several MFA devices options in AWS:
+
+- Virtual MFA device; support for multiple tokens in a single device (e.g., Google Authenticator --phone only-- and Authy --multi-device--).
+- Universal 2nd Factor (U2F) Security Key; support for multiple root and IAM users using a single security key (e.g., Yubikey by Yubico)
+- Hardware Key Fob Device
+
+So that's it, we knew the theory on how to protect your account.
+
+AWS Access Keys, CLI and SDK
+----------------------------
+
+The users can access to AWS via three options:
+
+- AWS Management Console, protected by password and MFA
+- AWS Command Line Interface (CLI), protected by access keys
+- AWS Software Development Kit (SDK), for code and protected by access key.
+
+The access keys are generated through the AWS Console. The users manage their own access keys and the are secret, just like a password so please don't shared them. A valid equivalence is associate the Access Key Id as an username and a Secret Access Key as a password. Below it is shared an example:
+
+![AWS Access Keys](../assets/images/01E-access-keys.png)
+
+The [CLI](https://github.com/aws/aws-cli) is a tool tha enables you to interact with AWS service using commands in your command line shell. You have direct access to the public APIs of AWS service and you can develop scripts to manage your resources. All this commands are prefixed with `aws`. This tool is open source and it is an alternative to use the AWS Management Console.
+
+The SDK is language-specific to APIs and it enables you to access and manage AWS services programmatically embedded within your application. It supports several programming languages, mobiles SDKs and IoT devices. An example is the AWS CL, that is built on AWS SDK for python.
+
+A good alternative to handle AWS as CLI is AWS CloudShell. You can enable it using the icon highlighted in the next image:
+
+![AWS Cloud Shell](../assets/images/01F-aws-cloud-shell.png)
+
+Just validate that is available in your region and you can use it even as a files repository.
