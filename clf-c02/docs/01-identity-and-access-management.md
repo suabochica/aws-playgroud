@@ -121,3 +121,12 @@ A good alternative to handle AWS as CLI is AWS CloudShell. You can enable it usi
 ![AWS Cloud Shell](../assets/images/01F-aws-cloud-shell.png)
 
 Just validate that is available in your region and you can use it even as a files repository.
+
+IAM Roles
+---------
+
+An IAM role is just like and user, but, they are intended to be used not by physical people, instead they will be used by AWS Service. This is a bit confusing so let's clarify it with an example. One of the AWS services is EC2. An EC2 instance is a virtual server and it could perform some action in AWS. So, to execute this actions we need to give permissions to out EC2 instance, creating a IAM role and together they are going to make our entity. The next image summarizes this description:
+
+![IAM Roles](../assets/images/01G-iam-roles.png)
+
+Some common roles in AWS are EC2 instance roles, lambda function roles and roles for CloudFormation.
