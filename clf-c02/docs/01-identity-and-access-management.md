@@ -130,3 +130,21 @@ An IAM role is just like and user, but, they are intended to be used not by phys
 ![IAM Roles](../assets/images/01G-iam-roles.png)
 
 Some common roles in AWS are EC2 instance roles, lambda function roles and roles for CloudFormation.
+
+IAM Security Tools
+------------------
+
+To control the security in IAM we have two options:
+
+- IAM Credentials Report (account-level)
+- IAM Access Advisor (account-level)
+
+The credentials report is a list of all your accounts users and the status of their various credentials. In the next image you can check where to download this `.csv` file:
+
+![Credential Report](../assets/images/01H-credential-report.png)
+
+In the other hand, the access advisor shows the services permissions granted to a user and when those services were last accessed. You can use this information to revise your policies. The next image shows where you can check the access advisor for a user:
+
+![Access Advisor](../assets/images/01I-access-advisor.png)
+
+To summarize, access advisor becomes very helpful whe you need to do granular user access permissions on AWS.
