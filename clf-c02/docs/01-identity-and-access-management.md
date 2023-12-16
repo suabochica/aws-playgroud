@@ -148,3 +148,28 @@ In the other hand, the access advisor shows the services permissions granted to 
 ![Access Advisor](../assets/images/01I-access-advisor.png)
 
 To summarize, access advisor becomes very helpful whe you need to do granular user access permissions on AWS.
+
+IAM Best Practices
+------------------
+
+- Do not use the root account except for AWS account setup
+- One physical user is equal to an AWS user
+- Assign users to groups and assign permission to groups
+- Create a strong password policy
+- Use and enforce the use of MFA
+- Create and use roles for givin permissions to AWS services
+- Use access keys for programmatic access (CLI/SDK)
+- Audit permissions of your account using IAM credentials report and IAM access advisor
+- Never share IAM users & access keys
+
+IAM Summary
+
+- **Users**: mapped to a physical user, has a password for AWS console.
+- **Groups**: contains user only.
+- **Policies**: JSON document that outlines permissions for users or groups.
+- **Roles**: for specific AWS services.
+- **Security**: MFA plus password policy.
+- **AWS CLI**: manage your AWS services using command-line.
+- **AWS SDK**: manage your AWS services using programming language.
+- **Access Keys**: access AWS using the CLI or SDK.
+- **Audit**: IAM credential report and IAM access advisor.
