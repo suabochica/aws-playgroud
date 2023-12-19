@@ -34,3 +34,26 @@ The next image shows different types of EC2 instances:
 ![EC2 Types](../assets/images/02B-ec2-instances.png)
 
 As you can see the `t2.tier` is part of the free tier, so it is a good option to start to play with EC2.
+
+EC2 Types
+---------
+
+EC2 uses instances types that are optimized for different use cases, based in categories like: general purpose, computed optimized, memory optimized, etc. Moreover AWS use the following naming convention:
+
+```
+m5.2xlarge
+```
+
+where;
+
+- m: instances class (biased by the use case).
+- 5: generation.
+- 2xlarge: size within instance class.
+
+For instance, the **general purpose** instances are great for diversity of workloads such as web server or code repositories. Encourage a balance between compute, memory and network. The free tier `t2.micro` is a general purpose EC2 instance.
+
+For other side the **compute optimized** are great for compute-intensive task that require high performance processors to perform activities like batch processing workloads, media transcoding, high performance computing, scientific modeling, machine learning or dedicated gaming services.
+
+The **memory optimized** instance are used to fast performance for workloads that process large data sets in memory. Some use cases are distributed web scale cache stores, in memory databases optimized for business intelligence or application performing real-time processing of big unstructured data.
+
+Finally the **storage optimized** are great for storage-intensive tasks that require high, sequential read and write access to large data sets on local storage. Some actions are high frequency online transaction processing systems, relation/non-relational databases, cache for in-memory databases (e.g., redis), data warehousing applications or distributed file systems.
