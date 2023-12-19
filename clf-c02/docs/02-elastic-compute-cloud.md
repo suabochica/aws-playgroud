@@ -57,3 +57,44 @@ For other side the **compute optimized** are great for compute-intensive task th
 The **memory optimized** instance are used to fast performance for workloads that process large data sets in memory. Some use cases are distributed web scale cache stores, in memory databases optimized for business intelligence or application performing real-time processing of big unstructured data.
 
 Finally the **storage optimized** are great for storage-intensive tasks that require high, sequential read and write access to large data sets on local storage. Some actions are high frequency online transaction processing systems, relation/non-relational databases, cache for in-memory databases (e.g., redis), data warehousing applications or distributed file systems.
+
+For more information please visit the [EC2 instances types](https://aws.amzon.com/ec2/instance-types) and check the [Vantage](https://instances.vantage.sh/) to complete list of EC2 instances with different specifications.
+
+EC2 Security Groups
+-------------------
+
+Security groups are the fundamental of network security in AWS because they control how traffic is allowed into or out the EC2 instances. The next image show how a security group wrap and EC2 instance to control the traffic with the world web wide.
+
+![Security Groups](../assets/images/02C-ec2-security-groups.png)
+
+The security groups only contain _allow_ rules, and these rules can reference by IP or by another security group. Going deeper, the security groups are acting as a _firewall_ on EC2 instances and they regulate; access to ports, authorized IP ranges, control the inbound network (from other to the instance) and control of outbound network (from the instance to other). Below a diagram of how a security group manage the inbound and the outbound of a EC2 instance:
+
+![Firewall](../assets/images/02D-ec2-firewall.png)
+
+It is good to know that the security group can be attached to multiple instances. They are locked down to a region/VPC combination and they live _outside_ the EC2, so if the traffic is blocked the EC2 instance won't see it. Also, it is good to maintain one separate security group for SSH access, so if your application is not accessible (_timeout_), then it is a security group issue. Then, if your application gives a _connection refused_ error then it is an application error or it is not launched.
+
+Lastly it is important that a security group can reference other security groups. The next diagram is an example of how several security groups can interact:
+
+![Referencing](../assets/images/02F-ec2-referencing.png)
+
+To complement the security group it is good to know the classic ports. The next table wrap up the most popular ones.
+
+|  Number  |                             Assignment                             |
+|:--------:|:------------------------------------------------------------------:|
+|    20    | File Transfer Protocol (FTP) Data Transfer                         |
+|    21    | File Transfer Protocol (FTP) Command Control                       |
+|    22    | Secure Shell (SSH) Secure Login                                    |
+|    23    | Telnet remote login service, unencrypted text messages             |
+|    25    | Simple Mail Transfer Protocol (SMTP) email delivery                |
+|    53    | Domain Name System (DNS) service                                   |
+|  67, 68  | Dynamic Host Configuration Protocol (DHCP)                         |
+|    80    | Hypertext Transfer Protocol (HTTP) used in the World Wide Web      |
+|    110   | Post Office Protocol (POP3)                                        |
+|    119   | Network News Transfer Protocol (NNTP)                              |
+|    123   | Network Time Protocol (NTP)                                        |
+|    143   | Internet Message Access Protocol (IMAP) Management of digital mail |
+|    161   | Simple Network Management Protocol (SNMP)                          |
+|    194   | Internet Relay Chat (IRC)                                          |
+|    443   | HTTP Secure (HTTPS) HTTP over TLS/SSL                              |
+| 546, 547 | DHCPv6 IPv6 version of DHCP                                        |
+|    3389  | Remote Desktop Protocol (RDP) to log into a Windows instance       |
