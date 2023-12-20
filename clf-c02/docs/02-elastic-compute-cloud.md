@@ -75,7 +75,7 @@ It is good to know that the security group can be attached to multiple instances
 
 Lastly it is important that a security group can reference other security groups. The next diagram is an example of how several security groups can interact:
 
-![Referencing](../assets/images/02F-ec2-referencing.png)
+![Referencing](../assets/images/02E-ec2-referencing.png)
 
 To complement the security group it is good to know the classic ports. The next table wrap up the most popular ones.
 
@@ -98,3 +98,60 @@ To complement the security group it is good to know the classic ports. The next 
 |    443   | HTTP Secure (HTTPS) HTTP over TLS/SSL                              |
 | 546, 547 | DHCPv6 IPv6 version of DHCP                                        |
 |    3389  | Remote Desktop Protocol (RDP) to log into a Windows instance       |
+
+SSH Overview
+------------
+
+You are getting some problems with trickier bits that are running in the cloud and you are probably wondering how to connect inside your servers to perform some maintenance action. The next table summarize the technologies that enable us this connection according you OS:
+
+![SSH summary](../assets/images/02F-ec2-ssh.png)
+
+So, you can use a secure shell (SSH) into the servers. SSH is one of the most important function because it allows you to control a remote machine using a command line interface. You should set up a SSH client with the credentials in the `.pem` file that you download at the moment of create a EC2 Instance and the Public IPv4 address of your instance (e.g., 18.208.142.113).
+
+So, open a terminal and navigate to the directory with the  `.pem` file. Then run then next command:
+
+```sh
+ssh -i EC2Tutorial.pem ec2-user@18.208.142.113
+```
+
+If you get this output:
+
+```txt
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0644 for 'EC2Tutorial.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "EC2Tutorial.pem": bad permissions
+ec2-user@18.208.142.113: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+```
+
+It means that you have the wrong permissions for the `EC2Tutorial.pem` file. Let's update it running:
+
+```sh
+chmod 0400 EC2Tutorial.pem
+```
+
+Now, try again the first command. You will have a successful connection if you get the next output:
+
+```txt
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Dec 20 19:27:09 2023 from 186.29.250.100
+[ec2-user@ip-172-31-22-28 ~]$
+```
+
+SSH is known for expose some for generate some problems. A pattern that could help you to mitigate this is:
+
+1. Check carefully the steps you executed.
+2. Read the troubleshooting guide.
+3. Try EC2 instances connect.
