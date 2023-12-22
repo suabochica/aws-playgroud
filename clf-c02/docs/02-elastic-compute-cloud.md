@@ -196,3 +196,66 @@ Don't panic. Use EC2 Instance Connect from the next lecture. Make sure you start
 This is probably because you have stopped your EC2 instance and then started it again today. When you do so, the public IP of your EC2 instance will change. Therefore, in your command, or Putty configuration, please make sure to edit and save the new public IP.
 
 Happy troubleshooting!
+
+EC2 Instance Connect
+--------------------
+
+In case that SSH will a problem, and option is use EC2 Instance Connect. This will be enable a connection to the EC2 instance via a browser. You must select the instance and then click in connect, as shown the next image:
+
+![EC2 Instance Connect](../assets/images/02H-ec2-instance-connect.png)
+
+This will open a new tab in your browser as shown below:
+
+![Browser CLI](../assets/images/02I-ec2-cli.png)
+
+All this rely on SSH; if you go to the security group and remove the SSH rule you won't able to connect to you EC2 instance.
+
+Now, as a rule of thumb, never run the next command in your EC2 Instance Connect:
+
+```sh
+aws configure
+```
+
+As you notice, this means that if someone have access to our AWS account could retrieve our AWS keys from this EC2 Instance Connect. Instead, you can set up IAM roles. Remember that before we create a `DemoRoleForEC2`. So, let's attach that role to the EC2 Instance. For that, select the instance, click on **Actions > Security > Modify IAM role** as shown the next image:
+
+![Modify IAM Role](../assets/images/02J-ec2-attach-role.png)
+
+Then select the `DemoRoleForEC2` in the dropdown list:
+
+![Select Role](../assets/images/02K-ec2-select-role.png)
+
+Let's check that the role was attached in the **Security** tab of the EC2 Instance:
+
+![Verify Role](../assets/images/02L-ec2-verfiy-role.png)
+
+And finally let's run the next command in the browser CLI that is attached to the instance:
+
+```sh
+aws iam list-users
+```
+
+You should get the next output:
+
+```txt
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "admin",
+            "UserId": "AIDASM7UHDSLE44C6FZMK",
+            "Arn": "arn:aws:iam::165331541142:user/admin",
+            "CreateDate": "2023-09-18T13:27:14+00:00"
+        },
+        {
+            "Path": "/",
+            "UserName": "Sergio",
+            "UserId": "AIDASM7UHDSLPVSI357RA",
+            "Arn": "arn:aws:iam::165331541142:user/Sergio",
+            "CreateDate": "2023-12-11T02:29:18+00:00",
+            "PasswordLastUsed": "2023-12-22T19:51:21+00:00"
+        }
+    ]
+}
+```
+
+These are the users associated to that role.
