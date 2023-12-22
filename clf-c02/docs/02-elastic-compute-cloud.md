@@ -259,3 +259,33 @@ You should get the next output:
 ```
 
 These are the users associated to that role.
+
+EC2 Purchasing Options
+----------------------
+
+So you have the next option for the purchase of your EC2 instances:
+
+- On-demand instance: short workload, predictable pricing, pay by second.
+- Reserved: instances for long workloads, convertible for long workloads with flexible instances.
+- Saving plans: commitment to an amount of usage, long workload.
+- Spot instance: short workloads, cheap, can lose instance.
+- Dedicated hosts: book an entire physical server, control instance placement.
+
+So a good analogy is a subscription plan in a resort:
+
+- On-demand instance: coming and staying in resort whenever you like, we pay the full price.
+- Reserved: like planning ahead and if we plan to stay for a long time, we may get a good discount.
+- Saving plans: pay a certain amount per hour for certain period and stay in any room type.
+- Spot instance: the hotel allow people to bid for empty rooms and the highest bidder keeps the rooms. You can get kicked out at any time.
+- Dedicated hosts: you book the entire building of the resort.
+- Capacity reservations: you bokk a room for a period with full price even you don't stay in it.
+
+EC2 Summary
+-----------
+
+- **EC2 Instance:** AMI (OS), instance size (CPU and RAM), storage, security groups, ec2 user data for bootstrap.
+- **Security Groups:** Firewall attached to the EC2 instance.
+- **EC2 User Data:** Script launched at the first start of an instance.
+- **SSH:** Start a terminal into our EC2 instaces (port 22).
+- **EC2 Instance Role:** link to IAM Roles.
+- **Purchasing Options:** On demand, spot, reserved, Dedicated host, dedicated instance.
