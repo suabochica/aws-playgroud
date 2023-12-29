@@ -14,3 +14,7 @@ Lastly, you have a provisioned capacity. You get billed for all the provisioned 
 The next diagram is and example of EBS Volume distribution:
 
 ![EBS Volume example](../assets/images/03A-ebs-volume-example.png)
+
+It is important to keep in mind the delete on termination attribute. We can control the EBS behaviour when an EC2 instance terminates; by default the root EBS volume is deleted whe the attribute is enable. If it is disabled any another EBS volume is not deleted. They can be controlled by the AWS console and the use case is preserve the root volume when the instance is terminated.
+
+> **About EBS Multi-Attach:** For volumes `io1` and `io2` we have a EBS multi-attach feature. However, from  an AWS Cloud Practitioner exam perspective this out of scope for the exam. In order to keep the course simple and accessible, I have left out this feature from the course. If you are curious to learn about EBS Multi-Attach, you will find it in the AWS Certified Solutions Architect Associate course, or in the AWS documentation.
