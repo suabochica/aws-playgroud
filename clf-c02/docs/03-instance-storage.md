@@ -18,3 +18,15 @@ The next diagram is and example of EBS Volume distribution:
 It is important to keep in mind the delete on termination attribute. We can control the EBS behaviour when an EC2 instance terminates; by default the root EBS volume is deleted whe the attribute is enable. If it is disabled any another EBS volume is not deleted. They can be controlled by the AWS console and the use case is preserve the root volume when the instance is terminated.
 
 > **About EBS Multi-Attach:** For volumes `io1` and `io2` we have a EBS multi-attach feature. However, from  an AWS Cloud Practitioner exam perspective this out of scope for the exam. In order to keep the course simple and accessible, I have left out this feature from the course. If you are curious to learn about EBS Multi-Attach, you will find it in the AWS Certified Solutions Architect Associate course, or in the AWS documentation.
+
+EBS Snapshots
+-------------
+
+A snapshot is a backup of your EBS volume at a point in time. It is not necessary to detach volume to do snapshot, but it is recommended. With a snapshot you can copy them across a availability zone or region. The next image is an example of how we can use a snapshot in two regions.
+
+[EBS Snapshot](../assets/images/03B-ebs-snapshots.png)
+
+The snapshots have the next features:
+
+- EBS snapshot archive allows to move a snapshot to an archive tier that is 75% cheaper. It takes between 24 to 72 hours for restoring the archive.
+- Recycle bin for EBS snapshot allows to setup rule to retain deleted snapshots so you can recover them after an accidental deletion.
