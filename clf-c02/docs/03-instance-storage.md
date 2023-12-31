@@ -30,3 +30,25 @@ The snapshots have the next features:
 
 - EBS snapshot archive allows to move a snapshot to an archive tier that is 75% cheaper. It takes between 24 to 72 hours for restoring the archive.
 - Recycle bin for EBS snapshot allows to setup rule to retain deleted snapshots so you can recover them after an accidental deletion.
+
+AMI Overview
+------------
+
+Amazon Machine Image (AMI) are customization of a EC2 instance. So, you add your own software, configuration, operation system, monitoring task and so on. An advantage is that the AMI have a faster boot because all your software is pre-packaged.
+
+AMI are build for a specific region and they can be copied across regions. You can launch EC2 instances from three alternatives:
+
+- A public AMI, that is provided by AWS.
+- Your own AMI, and you have to created and maintain them yourself.
+- An AWS marketplace AMI, that is an AMI that someone else made but it is potentially do for sells.
+
+The AMI process for an EC2 instance is the next one:
+
+1. Start an EC2 instance and customize it.
+2. Stop the instance for data integrity.
+3. Build an AMI; this will also create EBS snapshots.
+4. Launch instance from other AMIs.
+
+The below image summarize this steps:
+
+![AMI Process](../assets/images/03C-ami-from-ec2.png)
