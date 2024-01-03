@@ -61,3 +61,8 @@ EC2 image builder is used to automate the creation of virtual machines or contai
 ![EC2 Image Builder](../assets/images/03D-ec2-image-builder.png)
 
 This is a free service and you only pay for the underlying resources.
+
+EC2 Instance Store
+--------------------
+
+Remember that EBS volumes are network drives with good but _limited_ performance. If you need a high performance hardware disk, use EC2 instance store because they are better for input output performance. The EC2 instance store is ephemeral; it is that lose their storage if they are stopped. So we can use them for buffer, cache, scratch data or temporary content. Keep in mind that you are exposed to the risk of data loss if hardware fails. Then the backups and replications are your responsibility.
