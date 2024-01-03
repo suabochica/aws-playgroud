@@ -66,3 +66,18 @@ EC2 Instance Store
 --------------------
 
 Remember that EBS volumes are network drives with good but _limited_ performance. If you need a high performance hardware disk, use EC2 instance store because they are better for input output performance. The EC2 instance store is ephemeral; it is that lose their storage if they are stopped. So we can use them for buffer, cache, scratch data or temporary content. Keep in mind that you are exposed to the risk of data loss if hardware fails. Then the backups and replications are your responsibility.
+
+EFS Elastic File System
+-----------------------
+
+The elastic file system manages a network file system (NFS) that can be mounted on 100s of EC2. It works with linux EC2 instances in multiple availability zones. It is highly available, scalable, expensive, pay per use without planning capacity. Below it is an example of three EC2 instances consuming the same EFS filesystem:
+
+![Elastic File System](../assets/images/03E-efs.png)
+
+Let's outline the difference between EBS and EFS. In EBS we had a EC2 instance in one AZ; then the EBS volume can only be attached to one instance in one specific AZ. So, the EBS volumes are bound to specific AZ. If we want to move the EBS from one AZ to another, we should use an snapshot. Keep in mind that the snapshot is a copy and not a in-sync replica.
+
+In the other side, the EFS is a network system that whatever is on the EGS drive is shared by everything that is mounted to it. That means that independently the number of instance that we had in different AZs, at the same time all these instances can mount the same EFS drive making a shared file system. The next image summarizes the difference between the two services:
+
+![EBS vs EFS](../assets/images/03F-ebs-vs-efs.png)
+
+There is a storage class you need to know for EFS and it's called EFS infrequent access or EFS-IA. This storage class is going to be cost-optimized for files that you don't access very often. So, for example, you don't access these files every day, then, this storage class will give you up to 92% lower cost for storing the data compared to the other storage class, which is called EFS standard. If you enable EFS-IA, then EFS will automatically move your files to EFS-IA, based on the last times they were accessed and something called a lifecycle policy.
