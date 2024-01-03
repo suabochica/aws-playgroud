@@ -52,3 +52,12 @@ The AMI process for an EC2 instance is the next one:
 The below image summarize this steps:
 
 ![AMI Process](../assets/images/03C-ami-from-ec2.png)
+
+EC2 Image Builder
+-----------------
+
+EC2 image builder is used to automate the creation of virtual machines or container images. With this service we can automate the creation, maintain, validate and test EC2 AMIs. It can be run on a schedule (e.g., daily, weekly, or whenever packages are updated). The next image summarizes the process the perform the image builder:
+
+![EC2 Image Builder](../assets/images/03D-ec2-image-builder.png)
+
+This is a free service and you only pay for the underlying resources.
