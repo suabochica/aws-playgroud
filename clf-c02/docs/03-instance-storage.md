@@ -81,3 +81,43 @@ In the other side, the EFS is a network system that whatever is on the EGS drive
 ![EBS vs EFS](../assets/images/03F-ebs-vs-efs.png)
 
 There is a storage class you need to know for EFS and it's called EFS infrequent access or EFS-IA. This storage class is going to be cost-optimized for files that you don't access very often. So, for example, you don't access these files every day, then, this storage class will give you up to 92% lower cost for storing the data compared to the other storage class, which is called EFS standard. If you enable EFS-IA, then EFS will automatically move your files to EFS-IA, based on the last times they were accessed and something called a lifecycle policy.
+
+Shared responsibility model for EC2 Storage
+-------------------------------------------
+
+As usual, shared responsibility is important going into the certified cloud practitioner exam. So we need to understand where is the responsibility for AWS and yours regarding EC2 storage. The next table summarizes these responsibilities.
+
+|                        AWS                        |                        You                         |
+|:-------------------------------------------------:|:--------------------------------------------------:|
+|                  Infrastructure                   |      Setting up backup / snapshot procedures       |
+| Replication for data for EBS volumes & EFS drives |             Setting up data encryption             |
+|             Replacing faulty hardware             |      Responsibility of any data on the drives      |
+| Ensuring their employees cannot access your data  | Understanding the risk of using EC2 Instance Store |
+
+Amazon FSx
+----------
+
+Amazon File System eXternal (FSx) is a service to get third-party high performance file systems on AWS. So, in case you don't want to use EFS or S3, then you can use FSx to manage these file system and currently the offer is:
+
+- FSx for Lustre
+- FSx for Windows File Server
+- FSx for NetApp ONTAP (out of the scope of this notes)
+
+In the case of FSx for Windows file serve, you have a fully managed, highly reliable, and scalable _windows native_ shared file system built on Windows File Server and supports SMB protocol plus Windows NTFS. Also it is integrated with Microsoft Active Directory and can be accessed from AWS or you on premise infrastructure. The next image show how AWS FSx works with a Windows client over SMB.
+
+![Amazon FSx for Windows](../assets/images/03G-fsx-for-windows.png)
+
+For other side, the Amazon FSx for Lustre (Lustre is derived from "Linux" and "Cluster") is a fully managed high performance, scalable fire storage for **High Performance Computing**. The common uses are machine learning, analytics, video processing, financial modeling, etc. This service scales up to 100S GB/s, millions of input/output operations with sub-milliseconds latencies. The next diagram illustrate how FSx for Lustre works:
+
+![Amazon FSx for Lustre](../assets/images/03E-fsx-for-lustre.png)
+
+EC2 Instance Storage Summary
+----------------------------
+
+- **EBS Volumes:**  are network drives attached to one EC2 instance at a time that are mapped to an availability zones and can use EBS snapshots for backups and transferring EBS volume across availability zones.
+- **AMI:** creates ready-to-use EC2 instance with our customizations.
+- **EC2 Image Builder:** automatically build, test and distribute AMIs.
+- **EC2 Instance Store:** for high performance hardware disk attached to EC2 instance that lost the data if the instance is stopped or terminated.
+- **EFS:** network file system that can be attached to 100s of instance in a region.
+- **EFS-IA:** cost optimized storage class for infrequent accessed files.
+- **FSx:** service to get third-party high performance file system on AWS.

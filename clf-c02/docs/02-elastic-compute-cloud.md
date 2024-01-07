@@ -81,23 +81,23 @@ To complement the security group it is good to know the classic ports. The next 
 
 |  Number  |                             Assignment                             |
 |:--------:|:------------------------------------------------------------------:|
-|    20    | File Transfer Protocol (FTP) Data Transfer                         |
-|    21    | File Transfer Protocol (FTP) Command Control                       |
-|    22    | Secure Shell (SSH) Secure Login                                    |
-|    23    | Telnet remote login service, unencrypted text messages             |
-|    25    | Simple Mail Transfer Protocol (SMTP) email delivery                |
-|    53    | Domain Name System (DNS) service                                   |
-|  67, 68  | Dynamic Host Configuration Protocol (DHCP)                         |
-|    80    | Hypertext Transfer Protocol (HTTP) used in the World Wide Web      |
-|    110   | Post Office Protocol (POP3)                                        |
-|    119   | Network News Transfer Protocol (NNTP)                              |
-|    123   | Network Time Protocol (NTP)                                        |
-|    143   | Internet Message Access Protocol (IMAP) Management of digital mail |
-|    161   | Simple Network Management Protocol (SNMP)                          |
-|    194   | Internet Relay Chat (IRC)                                          |
-|    443   | HTTP Secure (HTTPS) HTTP over TLS/SSL                              |
-| 546, 547 | DHCPv6 IPv6 version of DHCP                                        |
-|    3389  | Remote Desktop Protocol (RDP) to log into a Windows instance       |
+|    20    |             File Transfer Protocol (FTP) Data Transfer             |
+|    21    |            File Transfer Protocol (FTP) Command Control            |
+|    22    |                  Secure Shell (SSH) Secure Login                   |
+|    23    |       Telnet remote login service, unencrypted text messages       |
+|    25    |        Simple Mail Transfer Protocol (SMTP) email delivery         |
+|    53    |                  Domain Name System (DNS) service                  |
+|  67, 68  |             Dynamic Host Configuration Protocol (DHCP)             |
+|    80    |   Hypertext Transfer Protocol (HTTP) used in the World Wide Web    |
+|   110    |                    Post Office Protocol (POP3)                     |
+|   119    |               Network News Transfer Protocol (NNTP)                |
+|   123    |                    Network Time Protocol (NTP)                     |
+|   143    | Internet Message Access Protocol (IMAP) Management of digital mail |
+|   161    |             Simple Network Management Protocol (SNMP)              |
+|   194    |                     Internet Relay Chat (IRC)                      |
+|   443    |               HTTP Secure (HTTPS) HTTP over TLS/SSL                |
+| 546, 547 |                    DHCPv6 IPv6 version of DHCP                     |
+|   3389   |    Remote Desktop Protocol (RDP) to log into a Windows instance    |
 
 SSH Overview
 ------------
@@ -286,6 +286,6 @@ EC2 Summary
 - **EC2 Instance:** AMI (OS), instance size (CPU and RAM), storage, security groups, ec2 user data for bootstrap.
 - **Security Groups:** Firewall attached to the EC2 instance.
 - **EC2 User Data:** Script launched at the first start of an instance.
-- **SSH:** Start a terminal into our EC2 instaces (port 22).
+- **SSH:** Start a terminal into our EC2 instances (port 22).
 - **EC2 Instance Role:** link to IAM Roles.
 - **Purchasing Options:** On demand, spot, reserved, Dedicated host, dedicated instance.
