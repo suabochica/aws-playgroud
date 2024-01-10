@@ -35,3 +35,25 @@ Let's end this intro with some important definitions:
 Once a system is scalable, **elasticity** means that there will be some auto-scaling so that the system can scale based on the load. This is cloud-friendly, pay per use, match on demand and optimize costs.
 
 **Agility**, that is not related to scalability and sometimes is a distract, are new IT resources that are only a click away, which means that you reduce the time to make those resources available to your developers from weeks to just minutes.
+
+Elastic Load Balancer (ELB) Overview
+-------------------------------------
+
+A load balancer are servers that forward internet traffic to multiple server (e.g., EC2 instances) downstream. The next illustration show how the load balancer distribute the traffic according the consulting user:
+
+![Load Balancer](../assets/images/04A-load-balancer.png)
+
+The benefits of use a load balancer are several; It helps to spread load across multiple downstream instances, exposing a single point of access (i.e., DNS) to your application. Also, yu can seamlessly handle failures of downstream instances doing regular health checks to them. It provides SSL termination vias HTTPS for your websites allowing high availability across zones.
+
+Now, under the context of AWS we have the ELB that is a managed load balancer where AWS guarantees that it will be working, take care of upgrades, maintenance and high availability and provides few configuration knobs. A warning is that use ELB cost less to setup your own load balancer but it will be a lot more effort on your end (i.e., maintenance and integrations).
+
+AWS offer 4 kinds of load balancers:
+
+1. Application load balancer.
+2. Network load balancer.
+3. Gateway load balancer.
+4. Classic load balancer (retired on 2023).
+
+The next image summarize the difference between the not retired load balancers:
+
+![AWS Load Balancers](../assets/images/04B-aws-load-balancers.png)
