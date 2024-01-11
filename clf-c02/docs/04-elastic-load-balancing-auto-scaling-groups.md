@@ -57,3 +57,16 @@ AWS offer 4 kinds of load balancers:
 The next image summarize the difference between the not retired load balancers:
 
 ![AWS Load Balancers](../assets/images/04B-aws-load-balancers.png)
+
+Auto Scaling Group (ASG) Overview
+---------------------------------
+
+Keep in mind that in real life, the load on your websites and application can change. In the cloud, you can create and get rid of servers very quickly, so, the goal of ASG is to _scale out_ to match an increased load (i.e., add EC2 instances) and _scale in_  to match a decreased load (i.e., remove EC2 instances). Also, it ensures whe have a minimum and a maximum number of machine running, getting a automatic register for new instances to a load balancer, replacing the unhealthy ones. This represent cost savings, because we only run at an optimal capacity that is a principle of the cloud.
+
+The next image illustrate how the auto scaling group is defined:
+
+![Auto Scaling Group](../assets/images/04C-asg.png)
+
+With the schema of auto scaling group it is complementary the function of a load balancer as traffic manager over the instances that are created in the group. Below, an image with this scenario
+
+![ASG with Load Balancer](../assets/images/04D-asg-load-balancer.png)
