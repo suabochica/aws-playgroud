@@ -70,3 +70,19 @@ The next image illustrate how the auto scaling group is defined:
 With the schema of auto scaling group it is complementary the function of a load balancer as traffic manager over the instances that are created in the group. Below, an image with this scenario
 
 ![ASG with Load Balancer](../assets/images/04D-asg-load-balancer.png)
+
+Scaling Strategies
+------------------
+
+Let's review two scaling strategies; manual and dynamic. Manual scaling is straightforward and consist in update the size of an ASG manually.
+
+Dynamic scaling is more interesting because you will respond to changing demand according some criteria. For example, you can define a simple step scaling defining a condition _when a cloud watch alarm is triggered (e.g., CPU > 70%), then add 2 units_. Same behavior if we want to remove 1 unit whe CPU is < 30%. Other case is set a target tracking scaling when you want the average ASG CPU to stay around 40%. Lastly, we can schedule scaling, anticipating a scaling based on known usage patterns (e.g., increase the minimum capacity to 10 at 5 pm on Fridays).
+
+The last criteria open the word of predictive scaling where you can use machine learning to predict future traffic ahead of time and automatically provisions the right number of EC2 instances in advance. This is useful when your load has time based patterns.
+
+Summary
+-------
+
+- High availability (vertical) vs Scalability (horizontal) vs Elasticity vs Agility in the cloud.
+- Elastic load balancers to distribute traffic across backend EC2 instances, can be multi-AZ, supports health checks and we have 4 types: Classic, application, network and gateway
+- Auto scaling groups to implement elasticity for your application across multi-AZ, scaling EC2 instances based on the demand on your system, replacing unhealthy ones and offering and integration with ELB.
