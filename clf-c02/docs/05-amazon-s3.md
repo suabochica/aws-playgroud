@@ -60,3 +60,20 @@ So you can use a bucket policy to grant public access to the bucket, force objec
 ![Bucket policy](../assets/images/05A-bucket-policy.png)
 
 A last option are the bucket settings for block public access. These settings were created to prevent company data leaks, so, if you know your bucket should never be public leave these on. they can be set at account level.
+
+S3 Static Website Hosting
+-------------------------
+
+S3 can host static web sites and have them accessible on the Internet. The website URL will be defined by the region and some example are:
+
+- http://{{bucket_name}}.s3-website-{{aws_region}}.amazonaws.com
+- http://{{bucket_name}}.s3-website.{{aws_region}}.amazonaws.com
+
+If you get a **403 Forbidden error**, make sure the bucket policy allows public reads.
+
+S3 Versioning
+-------------
+
+You can version your files in Amazon S3. This feature is enable at the _bucket level_. The same key will change the "version". It is a best practice to version your bucket because it allows you to protect against unintended delete; now you have the ability to restore versions. And also is easy roll back to previous version of the file.
+
+Some notes are important to share; any file that is not versioned prior to enabling versioning will have the `null` values. Suspending versioning does not delete the previous version of the file.
