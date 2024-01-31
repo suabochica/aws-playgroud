@@ -77,3 +77,13 @@ S3 Versioning
 You can version your files in Amazon S3. This feature is enable at the _bucket level_. The same key will change the "version". It is a best practice to version your bucket because it allows you to protect against unintended delete; now you have the ability to restore versions. And also is easy roll back to previous version of the file.
 
 Some notes are important to share; any file that is not versioned prior to enabling versioning will have the `null` values. Suspending versioning does not delete the previous version of the file.
+
+S3 Replication
+--------------
+
+The idea behind replication is have a S3 bucket in one region and a target S3 bucket in another region via asynchronous replication between these two bucket. To do it we must enable versioning in the source and the destination bucket. We can apply the replication in two flavors:
+
+- Cross-Region Replication (a.k.a CRR): for compliance, lower latency, access, replication across accounts.
+- Same-Region Replication (a.k.a SRR): for log aggregation, live replication between production and test accounts.
+
+Their names are self-explanatory, and also we share their use cases. Then it's possible to have these buckets in different AWS accounts and copying happens asynchronously. So the replication mechanism happens in the background. To make replication work, you must give proper IAM permissions to the S3 service.
