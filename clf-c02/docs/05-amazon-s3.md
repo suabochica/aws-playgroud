@@ -87,3 +87,80 @@ The idea behind replication is have a S3 bucket in one region and a target S3 bu
 - Same-Region Replication (a.k.a SRR): for log aggregation, live replication between production and test accounts.
 
 Their names are self-explanatory, and also we share their use cases. Then it's possible to have these buckets in different AWS accounts and copying happens asynchronously. So the replication mechanism happens in the background. To make replication work, you must give proper IAM permissions to the S3 service.
+
+S3 Storage Classes
+------------------
+
+There are two concept you have to keep in mind when you deal with S3 storage classes: _durability_ and _availability_:
+
+**Durability** is measure with 9 and percentages to calculate the average expect to incur a loss of an object in Amazon S3. High durability of objects across multiple availabilities zones is around 99.99999999% (11 9's ). So if you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a 1 object once every 10,000 years. Durability is the same for all storage classes.
+
+In the other hand, **availability** measures how readily available a service is and it varies depending on storage class. For example, the Amazon S3 standard storage class has 99.99% of availability; this means that it will be not available 53 minutes in a year.
+
+For detailed information about the Amazon S3 Storage Classes please read the respective [docs](https://aws.amazon.com/s3/storage-classes/) about them.
+
+S3 Encryption
+-------------
+
+The next image summarize the two mechanism that we have with Amazon S3 to encrypt the files stored on it:
+
+![S3 Encryption](../assets/images/05B-encryption.png)
+
+IAM Access Analyzer for S3
+--------------------------
+
+With IAM Access Analyzer you can ensure that only intended people have access to you S3 buckets. For example publicly accessible bucket, bucket shared with other AWS account, etc. With the analyzer you can evaluate the S3 buckets policies, S3 ACLs, S3 access point policies and then determine if everything is OK.
+
+Share Responsibility Model for S3
+---------------------------------
+
+AWS's responsibilities:
+
+- Infrastructure (global security, durability, availability, sustain concurrent loss of data in two facilities)
+- Configuration and vulnerability analysis
+- Compliance validation
+
+User's responsibilities:
+
+- S3 versioning
+- S3 bucket policies
+- S3 replication setup
+- Logging and monitoring
+- S3 storage classes
+- Data encryption at rest in transit
+
+AWS Snow Family
+---------------
+
+The AWS snow family is a highly-secure, portable devices with two use cases:
+
+1. Migrate data into and out of AWS
+2. Collect and process data at the edge
+
+The next image sumarizes the services fo each case:
+
+![Snow Family](../assets/images/05C-snow-family.png)
+
+Let's start with the _data migration_ products. By rule of thumb, if a data migration takes more than a week to transfer over the network, then use the snowball devices. Below, a table that recaps the different features of the snowball devices.
+
+![Snowball Devices](../assets/images/05D-snow-family-data-migrations.png)
+
+The snow family have the next usage process:
+
+1. Request snowball devices from the AWS console for delivery.
+2. Install the snowball client (a.k.a. AWS OpsHub) on your servers.
+3. Connect the snowball to your servers and copy files using the client.
+4. Ship back the device when you are done.
+5. Data will be loaded into an S3 bucket.
+6. Snowball is completely wiped.
+
+Now, let's review with the _edge computing_. In short, edge computing is the process of data in edge location; an edge location is a location where you may have a limited / no internet access or limited / no easy access to computing power (e.g., a truck on the road, a ship on the sea, a mining station underground, etc.)
+
+Then, you can setup a snowball edge / snowcone device to do edge computing and preprocessed data, machine learning at the edge or transcoding media streams. This devices comes in two flavors:
+
+1. Compute optimized.
+2. Storage optimized.
+
+According your context, you do a choice.
+
+Historically, to use snow family devices, you needed a CLI; today you can use the **AWS OpsHub** a software you install on your computer to manage your snow family devices.
