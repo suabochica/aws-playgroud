@@ -164,3 +164,28 @@ Then, you can setup a snowball edge / snowcone device to do edge computing and p
 According your context, you do a choice.
 
 Historically, to use snow family devices, you needed a CLI; today you can use the **AWS OpsHub** a software you install on your computer to manage your snow family devices.
+
+About pricing, you pay for _device usage_ and _data transfer_ out of AWS. If the data transfer is to Amazon S# is $0.00 per GB. For device usage you have the **on-demand** option that includes one-time service fee per job with range between 10-15 days of usage for edge storage optimized 80-219 TB. Shipping days are not counted and you pay per day for any additional days.
+
+In the other hand, you have the **committed upfront** option, paying in advance for monthly, 1 or 3 years of usage for edge computing. This alternative offer up to 62% of discounted pricing.
+
+Storage Gateway
+---------------
+
+AWS is pushing for _hybrid cloud_; this means have part of your infrastructure is on-premises and other part is on the cloud. This can be due to long cloud migrations, security requirements, compliance requirements and IT strategy. S3 is a proprietary storage technology, so how dow you expose the S3 data on premise? The answer is the storage gateway as show the next image:
+
+![Storage Gateway](../assets/images/05E-storage-gateway.png)
+
+Store gateway is a bridge between on-premise data and cloud data in S3. Their use cases are disaster recovery, backup/restore and tiered storage.
+
+Summary
+-------
+
+- _Buckets vs Objects:_ global unique name tied to a region.
+- _S3 Security:_ IAM policy, S3 bucket policy, S3 encryption.
+- _S3 Websites:_ host a static website on Amazon S3.
+- _S3 Replication:_ same region or cross-region, must enable versioning.
+- _S3 Storage Classes:_ standard, IA, IZ-IA, intelligent, glacier.
+- _Snow Family:_ import data onto s3 through a physical device, edge computing
+- _OpsHub:_ desktop application to manage snow family devices
+- _Storage Gateway:_ hybrid solution to extend on-premises storage to S3.
