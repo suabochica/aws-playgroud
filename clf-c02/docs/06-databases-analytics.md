@@ -79,3 +79,33 @@ We have three types of deployments in RDS:
 Finally, we have the **multi-region** deployment. His use case is for _disaster recovery_ in case of a region issue. Due to his distribution you will have _local performance_ for global reads, but, you will pay with replication cost. The following image show a map of a multi-region deployment.
 
 ![Multi-Region](../assets/images/06F-multi-region.png)
+
+ElastiCache
+-----------
+
+ElastiCache is the option to handle _in-memory databases_. In the same way RDS is to get managed relational database, ElastiCache is to get manage Redis or Memcached. These caches are in-memory databases with high performance and low latency to reduce load off databases for read intensive workloads.
+
+Similarly, to RDS with ElastiCache AWS takes care of OS maintenance / patching, optimizations, setup, configuration, monitoring, failure recovery and backups.
+
+Below and image of an architecture with a cache databes:
+
+![Cache Architecture](../assets/images/06G-cache-arch.png)
+
+DynamoDB
+--------
+
+DynamoDB is a fully managed highly available NoSQL database with replication across 3 AZ. It scales to massive workloads, distributed _serverless_ database, processing millions of requests per second, trillions of row around 100 second of TB storage. Guaranties fast and consistent performance with a single-digit millisecond latency (i.e., low latency retrieval). Also it is integrated with IAM for security, authorization and administration.
+
+Below is an image with the type of data that handle a DynamoDB:
+
+![Dynamo Type of Data](../assets/images/06H-dynamo-type-of-data.png)
+
+Additionally, you can add the **DynamoDB Accelerator (a.k.a. DAX)**, that is a fully managed in-memory cache for DynamoDB, offering **10x performance improvement**, converting a single-digit millisecond latency to microseconds latency when accessing your DynamoDB tables. This offers a secure and highly scalable/available database. The difference with ElastiCache at cloud computing platform level is that DAX is only used for and is integrated with DynamoDB, while ElastiCache can be used for other databases.
+
+The next image is an architecture that use DAX in the middle of the application and a DynamoDB.
+
+![DAX](../assets/images/06I-dax.png)
+
+Finally, lets review the **DynamoDB global tables**. The purpose of a global table is make it accessible with **low latency** in multiple regions. They use the **active-active** replications that implies the the read and write operations could be done in any AWS region. The next images is an example of a global table that is replicate in N. Virginia and Pairs:
+
+![Global Tables](../assets/images/06J-global-tables.png)
