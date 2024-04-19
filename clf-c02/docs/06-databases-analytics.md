@@ -58,3 +58,24 @@ Now, let's talk about **Aurora**, that is a proprietary not open sourced technol
 There is also **Aurora Serverless** that is and automated database instantiation and auto-scaling based on actual usage. No capacity planning is needed and it is least management overhead. You can pay per second to be more cost effective.
 
 The use cases are: good for infrequent, intermittent or unpredictable workloads
+
+RDS Deployment
+--------------
+
+We have three types of deployments in RDS:
+
+1. Read replicas.
+2. Multi-AZ.
+3. Multi-Region.
+
+**Read replicas** help us to scale the read workload of the database. You can create up to 15 read replicas of the main RDS. Keep in mind that the data is only written to the main database. The next image illustrates the distribution of a read replicas deployment:
+
+![Read Replicas](../assets/images/06D-read-replicas.png)
+
+**Multi-AZ** is used to _failover- in case of availability zone outage, guarantee high availability in the database. The data is only read/written to the main database and you can only have 1 other AZ as failover. Below an example of a multi-AZ deployment:
+
+![Multi-AZ](../assets/images/06E-multi-az.png)
+
+Finally, we have the **multi-region** deployment. His use case is for _disaster recovery_ in case of a region issue. Due to his distribution you will have _local performance_ for global reads, but, you will pay with replication cost. The following image show a map of a multi-region deployment.
+
+![Multi-Region](../assets/images/06F-multi-region.png)
