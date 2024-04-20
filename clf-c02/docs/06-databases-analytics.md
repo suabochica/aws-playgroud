@@ -109,3 +109,16 @@ The next image is an architecture that use DAX in the middle of the application 
 Finally, lets review the **DynamoDB global tables**. The purpose of a global table is make it accessible with **low latency** in multiple regions. They use the **active-active** replications that implies the the read and write operations could be done in any AWS region. The next images is an example of a global table that is replicate in N. Virginia and Pairs:
 
 ![Global Tables](../assets/images/06J-global-tables.png)
+
+Redshift
+--------
+
+Redshift is based on PostgreSQL used for **online analytical processing (OLAP in short)** for execute analytics and data warehousing. It loads data once every hour and have 10x better performance than other data warehouses scaling to petabytes of data. Use columnar storage of data instead of row based offering massively parallel query execution (MPP in short) and highly availability. Pay as you go based on the instances provisioned and has a SQL interface for perming the queries. Lastly, business intelligence tools such AWS Quicksight or Tableu integrate with it.
+
+Complementary you can setup automatically provisions and scales data warehouse unrlying capacity with **Redshift Serverless**. Moreover, you can run analytics workloads without managing the data warehouse infrastructure, paying only for what you use.
+
+The common use cases of Redshift Serverless are: reporting, manage dashboard applications, and realtime analytics.
+
+Below it is a diagram with the sequence to setup Redshift Serverless:
+
+![Redshift Serverless](../assets/images/06K-redshift-serverless.png)
