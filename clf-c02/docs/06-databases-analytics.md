@@ -144,3 +144,14 @@ The use cases are: business intelligence, analytics, reporting, analyze and quer
 The next image illustrate the responsibilities of each service according and specific action:
 
 ![Athena](../assets/images/06L-amazon-athena.png)
+
+Amazon QuickSight
+-----------------
+
+Quicksight is a serverless machine learning powered business intelligence service to create interactive dashboard like the next one:
+
+![QuickSight](../assets/images/06M-quicksight.png)
+
+It is fast, automatically scalable, embeddable with a price per session. It can be integrated with RDS, Aurora, Athena, Redshigt and S3.
+
+Their use cases are: business analytics, building visualization, perform ad-hoc analysis and get business insight using data.
