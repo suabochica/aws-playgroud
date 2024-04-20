@@ -122,3 +122,12 @@ The common use cases of Redshift Serverless are: reporting, manage dashboard app
 Below it is a diagram with the sequence to setup Redshift Serverless:
 
 ![Redshift Serverless](../assets/images/06K-redshift-serverless.png)
+
+Amazon EMR
+----------
+
+EMR stands for Elastic MapReduce, and it helps creating **Hadoop Clusters** to analyze and process vast amount of data. Keep in mind the Apache Hadoop is a collection of open-source software utilities that facilitates using a network of many computers to solve problems involving massive amounts of data and computation.
+
+The clusters can be made of hundreds of EC2 instances, and also supports Apache Spark, HBase, Presto and Flink. EMR takes care of all the provisioning and configuration in AWS offering auto-scaling and integrations with Spot instances.
+
+The use cases are: data processing, machine learning, web indexing and big data.
