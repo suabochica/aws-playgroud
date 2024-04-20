@@ -131,3 +131,16 @@ EMR stands for Elastic MapReduce, and it helps creating **Hadoop Clusters** to a
 The clusters can be made of hundreds of EC2 instances, and also supports Apache Spark, HBase, Presto and Flink. EMR takes care of all the provisioning and configuration in AWS offering auto-scaling and integrations with Spot instances.
 
 The use cases are: data processing, machine learning, web indexing and big data.
+
+Amazon Athena
+-------------
+
+Athena is a serverless query service to perform analytics against S3 objects via SQL language to query the files. It supports CSVm JSON, ORC, AVRO and Parquet,
+
+The pricing is $5.00 per terabyte of data scanned and it use compressed or columnar data for cost saving.
+
+The use cases are: business intelligence, analytics, reporting, analyze and query VPC flow logs, ELB logs and cloud trail.
+
+The next image illustrate the responsibilities of each service according and specific action:
+
+![Athena](../assets/images/06L-amazon-athena.png)
