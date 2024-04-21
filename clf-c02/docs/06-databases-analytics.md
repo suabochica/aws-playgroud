@@ -155,3 +155,8 @@ Quicksight is a serverless machine learning powered business intelligence servic
 It is fast, automatically scalable, embeddable with a price per session. It can be integrated with RDS, Aurora, Athena, Redshigt and S3.
 
 Their use cases are: business analytics, building visualization, perform ad-hoc analysis and get business insight using data.
+
+DocumentDB
+----------
+
+As Aurora is an AWS implementation of PostgreSQL and MySQL, DocumentDB is the same for MongoDB that is popular a NoSQL database. MongoDB is used to store query and index JSON data. DocumentDB has the similar deployments concepts as Aurora so it is fully managed, highly available with replication across 3 availability zones. Automatically the store grows in increments of 10 gigabytes and it scales workloads with millions of request per seconds.
