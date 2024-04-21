@@ -160,3 +160,14 @@ DocumentDB
 ----------
 
 As Aurora is an AWS implementation of PostgreSQL and MySQL, DocumentDB is the same for MongoDB that is popular a NoSQL database. MongoDB is used to store query and index JSON data. DocumentDB has the similar deployments concepts as Aurora so it is fully managed, highly available with replication across 3 availability zones. Automatically the store grows in increments of 10 gigabytes and it scales workloads with millions of request per seconds.
+
+Amazon Neptune
+--------------
+
+Amazon Neptune is a fully managed **graph** database. Maybe the most popular graph dataset would be a **social network** where you have a lor of action and relations across users a post as show the next image:
+
+![Social Network](../assets/images/06N-social-network.png)
+
+Neptune is available across 3 availability zones with up 15 read replicas. It builds and run applications working with highly connected datasets optimizing these complex and hard queries. Also, it can store up to billions of relations and query the graph with milliseconds of latency.
+
+So the graph database are great for knowledge graphs as Wikipedia, fraud detections, recommendation engines and social networking.
