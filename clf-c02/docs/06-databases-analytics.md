@@ -123,8 +123,8 @@ Below it is a diagram with the sequence to setup Redshift Serverless:
 
 ![Redshift Serverless](../assets/images/06K-redshift-serverless.png)
 
-Amazon EMR
-----------
+Amazon Elastic MapReduce
+------------------------
 
 EMR stands for Elastic MapReduce, and it helps creating **Hadoop Clusters** to analyze and process vast amount of data. Keep in mind the Apache Hadoop is a collection of open-source software utilities that facilitates using a network of many computers to solve problems involving massive amounts of data and computation.
 
@@ -192,3 +192,12 @@ Amazon Managed Blockchain
 -------------------------
 
 Blockchain makes it possible to build applications where multiple parties can execute transaction **without the need for a trusted, central authority**/. This service is use to: join public blockchain networks or create your own scalable private network. It is compatible with the frameworks Hyperledger Fabric and Ethereum.
+
+AWS Glue
+--------
+
+Glue is a fully serverless managed service to extract, transform and load (in short ETL) data. It is useful to prepare and transform data for analytics. The next diagram is a common map of the use of a ETL service in AWS:
+
+![Glue ETL](../assets/images/06P-glue-etl.png)
+
+> Note: There is a Glue Data Catalog of dataset that can ve used with Athena, Redshift and EMR.
