@@ -179,3 +179,12 @@ TimeStream is a fully managed, fast and scalable serverless **time series databa
 
 TimeStream automatically scales up/down to adjust capacity. It stores and analyze trillions of events per day 1000 seconds faster and 1/10 of the cost of relational databases. It is a built-in series analytics function that help you identify patterns in your data in near real-time.
 
+Amazon QLDB
+-----------
+
+QLDB standos for _Quantum Ledger Database_. A ledger is a book to **recording financial transactions**. This database is fully managed, serverless, high available and with replication in 3 availability zones. It is used to review the history of all the changes made to your application data over time via and immutable system (i.e., no entry can be removed or modified, and it is cryptographically verifiable). The next image is and example of a QLDB journal:
+
+![QLDB](../assets/images/06O-qldb.png)
+
+It has a 2-3x bettern performance than common ledge blockchain frameworks, and the data in manipulated usign SQL. There is another amazon service called Amazon Managed Blockchain and the difference with it is that QLDB is use a centralized component while Amazon Manage Blockchain use a decentralized component.
+
