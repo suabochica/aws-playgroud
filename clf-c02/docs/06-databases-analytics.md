@@ -171,3 +171,11 @@ Amazon Neptune is a fully managed **graph** database. Maybe the most popular gra
 Neptune is available across 3 availability zones with up 15 read replicas. It builds and run applications working with highly connected datasets optimizing these complex and hard queries. Also, it can store up to billions of relations and query the graph with milliseconds of latency.
 
 So the graph database are great for knowledge graphs as Wikipedia, fraud detections, recommendation engines and social networking.
+
+Amazon TimeStream
+-----------------
+
+TimeStream is a fully managed, fast and scalable serverless **time series database**. So what is a time series data? Well, it's data that is evolving over time. So, for example, if you have on the vertical axis a number, and on the horizontal axis we have the year that is evolving from an older date to a newer date. Like the date is evolving over time, we are talking about a time series datasets.
+
+TimeStream automatically scales up/down to adjust capacity. It stores and analyze trillions of events per day 1000 seconds faster and 1/10 of the cost of relational databases. It is a built-in series analytics function that help you identify patterns in your data in near real-time.
+
