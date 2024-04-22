@@ -188,3 +188,7 @@ QLDB standos for _Quantum Ledger Database_. A ledger is a book to **recording fi
 
 It has a 2-3x bettern performance than common ledge blockchain frameworks, and the data in manipulated usign SQL. There is another amazon service called Amazon Managed Blockchain and the difference with it is that QLDB is use a centralized component while Amazon Manage Blockchain use a decentralized component.
 
+Amazon Managed Blockchain
+-------------------------
+
+Blockchain makes it possible to build applications where multiple parties can execute transaction **without the need for a trusted, central authority**/. This service is use to: join public blockchain networks or create your own scalable private network. It is compatible with the frameworks Hyperledger Fabric and Ethereum.
