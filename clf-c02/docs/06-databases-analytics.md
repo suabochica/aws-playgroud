@@ -201,3 +201,15 @@ Glue is a fully serverless managed service to extract, transform and load (in sh
 ![Glue ETL](../assets/images/06P-glue-etl.png)
 
 > Note: There is a Glue Data Catalog of dataset that can ve used with Athena, Redshift and EMR.
+
+AWS Database Migration Service
+------------------------------
+
+Database Migration Service (in short DMS) is the quickly and securely way to migrate database to AWS, keeping guarantees over resilient and a self healing process. The source database remains available during the migration. It support two types of migrations:
+
+- Homogeneous migrations: form Oracle to Oracle.
+- Heterogeneous migrations: form Microsoft SQL Server to Aurora.
+
+Then next image summarize a process that use DMS:
+
+![DMS](../assets/images/06Q-dms.png)
