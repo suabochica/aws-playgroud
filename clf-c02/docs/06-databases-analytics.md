@@ -213,3 +213,22 @@ Database Migration Service (in short DMS) is the quickly and securely way to mig
 Then next image summarize a process that use DMS:
 
 ![DMS](../assets/images/06Q-dms.png)
+
+Summary
+-------
+
+- _Relational Database - OLTP_: RDS & Aurora.
+- _Difference between Multi-AZ, Read Replica and Multi-Region._
+- _In-memory Database_: ElastiCache.
+- _Key-Value Database_: DynamoDB and DAX for Dynamo Cache.
+- _Warehouse - OLAP_: Redshift.
+- _Hadoop Cluster_: EMR.
+- _Athena_: Query data on Amazon S3.
+- _QuickSight_: Dashboard on your data.
+- _DocumentDB_: Aurora for MongoDB.
+- _Amazon QLDB_: Financial transaction ledger.
+- _Amazon Managed Blockchain_: Managed Hyperledger Fabric and Ethereum blockchains.
+- _Glue_: Managed ETL and data catalog service.
+- _Database Migration_: DMS.
+- _Neptune_: Graph database.
+- _TimeStream: Time-series database.
