@@ -63,3 +63,34 @@ So far, these are the serverless service that we already review:
 - Fargate, for launch locker containers.
 
 However, the most popular serverless services is pending to review, the **Lambda** service.
+
+AWS Lambda
+----------
+
+A good introduction to Amazon Lambda is a comparison with Amazon EC2. Remember that in the context of EC2 we have:
+
+- Virtual servers in the cloud.
+- Limited by RAM and CPU.
+- Continuously running.
+- Scaling means intervention to add / remove servers.
+
+Under the context of Lambda we have:
+
+- Virtual functions! i.e., no servers to manage.
+- Limited by time i.e, short execution.
+- Run **on-demand**.
+- Scaling is automated.
+
+So, we this approach is evident the benefits of Lambda. Here we got a easy pricing under a pay per request and compute time. It is integrated with the whole AWS suite of services. It is **event-driven**, so the functions are invoked by AWs when needed. It is integrated with manu programming languages. You can monitoring through AWS CloudWatch. And last but no least, it enables get more resources per function (up to 10 gigabytes of RAM) making that increasing RAMM will also improve CPU and Network.
+
+An example of use case for AWS Lambda is:
+
+1. Load a new image to S3.
+2. S3 trigger a Lambda function.
+3. This function creates a thumbnail of the image loaded.
+4. The thumbnail is stored int S3.
+5. The metadata of the image is stored in DynamoDB.
+
+Another common use case are the CRON jobs, to excute the function after a period of tame (e.g., each hour.),
+
+It is important to highlight that Lambda pricing could be per **calls**, so your first 1k request are free, then you pay $0.20 per 1 millions request, or per **duration** in increments of 1 millisecond. The conclusion is: AWS Lambda usually is very cheap so it's very popular.
