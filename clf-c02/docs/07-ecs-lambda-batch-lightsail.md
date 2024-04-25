@@ -48,3 +48,18 @@ Elastic Container Registry
 Elastic Container Registry (ECR in short) is a private docker registry on AWS to store your docker image. So they can be run by ECS or Fargate as shown the next illustration:
 
 ![ECR](../assets/images/07E-ecr.png)
+
+Serverless
+----------
+
+Serverless is a new paradigm in which developers do not have to manage servers anymore. They just deploy code and in a more concise way, they just deply **functions**. Initially it was equivalent to say the Serverless is Function as a Service (FaaS in shore). It was pioneered by AWS Lambda but now it also includes anything that is manages; databases, messaging, storages, etc.
+
+Serverless does not mean there are no servers, it means you just don't manage, provision or see them as developer.
+
+So far, these are the serverless service that we already review:
+
+- Amazon S3, for storage.
+- DynamoDB, for relational databases.
+- Fargate, for launch locker containers.
+
+However, the most popular serverless services is pending to review, the **Lambda** service.
