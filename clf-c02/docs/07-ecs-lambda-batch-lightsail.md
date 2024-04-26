@@ -103,3 +103,14 @@ API Gateway is a fully managed service for developers to easily create, publish,
 The most common use case is build a serverless API as show the next image:
 
 ![API Gateway](../assets/images/07F-api-gateway.png)
+
+AWS Batch
+---------
+
+A "batch" job is a job with a start and an end (i.e., is not continuos). AWS Batch is a fully managed batch processing a any scale, efficiently to run 100,000s of computing batch jobs on AWS. It will dynamically launch EC2 instance or sport instances providing the right amount of compute or memory. You submit or schedule batch jobs and AWS batch does the rest. These batch jobs are defined as docker images and run on ECS.
+
+It is helpful for cost optimizations and focusing less on infrastructure. The next diagrams is a use case of a batch job that after load and image execute a a process over it to insert it again in a S3 bucket:
+
+![AWS Batch](../assets/images/07G-aws-batch.png)
+
+After look this diagrams is valid ask, what is the difference between batch and lambda. Even the diagram looks similar the context are different; keep in mind that lambda has time limits fo 15 minutes, with limited runtimes, limited disk spaces and it is serverles. On the other hand batch has no time limit, the runtime it packages as a docker image, it relies on EBS instance store for disk spaces and is not serverles because it should use EC2.
