@@ -31,14 +31,14 @@ Docker is a sort of a virtualization technology, but not exactly. The resources 
 Elastic Container Service
 -------------------------
 
-Elastic Container Service (ECS in short) launch docker containers on AWS. Here you must provision and maintain the infrastructure of only EC2 instances. AWS takes care of starting/stopping containers ad it has integrations with the Application Load Balancer. The next diagram shows a structure of ECS.
+Elastic Container Service (ECS in short) launch docker containers on AWS. Here you must provision and maintain the infrastructure of only EC2 instances. AWS takes care of starting/stopping containers and it has integrations with the Application Load Balancer. The next diagram shows a structure of ECS.
 
 ![ECS](../assets/images/07C-ecs.png)
 
 Fargate
 -------
 
-Fargate also works to launch docker container on AWS but it is much simpler because you do not provision the infrastructure because ther is no EC2 instance to manage. It is serverless offering and AWS just runs containers based on the CPU/RAM you need. The next image show the distribution of docker containers with fargate.
+Fargate also works to launch docker container on AWS but it is much simpler because you do not provision the infrastructure because there is no EC2 instance to manage. It is serverless offering and AWS just runs containers based on the CPU/RAM you need. The next image show the distribution of docker containers with fargate.
 
 ![Fargate](../assets/images/07D-fargate.png)
 
@@ -113,4 +113,36 @@ It is helpful for cost optimizations and focusing less on infrastructure. The ne
 
 ![AWS Batch](../assets/images/07G-aws-batch.png)
 
-After look this diagrams is valid ask, what is the difference between batch and lambda. Even the diagram looks similar the context are different; keep in mind that lambda has time limits fo 15 minutes, with limited runtimes, limited disk spaces and it is serverles. On the other hand batch has no time limit, the runtime it packages as a docker image, it relies on EBS instance store for disk spaces and is not serverles because it should use EC2.
+After look this diagrams is valid ask, what is the difference between batch and lambda. Even the diagram looks similar the context are different; keep in mind that lambda has time limits fo 15 minutes, with limited runtimes, limited disk spaces and it is serverles. On the other hand batch has no time limit, the runtime it packages as a docker image, it relies on EBS instance store for disk spaces and is not serverless because it should use EC2.
+
+Amazon Lightsail
+----------------
+
+Lightsail is a simpler alternative to using EC2, RDS, ELB, EBS, Route, S3 and other detailed web services. It groups virtual servers, storage, databases and networking making a good option for people with little cloud experience. It manage low and predictable pricing and you can setup notifications and monitoring your Lightsail resources easily.
+
+Common use cases are:
+
+- Simple web applications i.e., templates for Linux Apache MySQL PHP (LAMP in short) and MongoDB Express Angular Node (MEAN in short), nginx, nodeJS and more.
+- Websites i.e., templates for WordPress, Magento, Plesk, Joomla and more content manage service.
+- Development and test environments.
+
+It has high availability but no auto-scaling. Also their integrations with AWS is limited.
+
+Summary
+-------
+
+- **Docker:** container technology to run applications.
+- **ECS:** run docker on EC2 instances.
+- **Fargate:** run docker container without provisioning the infrastructure and increasing the serverless offering.
+- **ECR:** Private docker images repository.
+- **Batch:** run batch jobs on AWS across managef EC2 instances.
+- **Lightsail:**: predictable and low pricing for simple applicaitons and database stacks.
+
+Besides, we how do a deep recap of **Lambda:**
+
+- Serverless function as a service, seamless scaling and reactive interactions.
+- Billing could be by the time run by the RAM provisioned or by the number of invocations.
+- Support several programming languages.
+- Invocation time up to 15 minutes.
+- Common use cases are loads content to S3 a make something wiht this content, or run serverless cron jobs.
+- It use API Gateway to expose the lambdas functions as HTTP API.
