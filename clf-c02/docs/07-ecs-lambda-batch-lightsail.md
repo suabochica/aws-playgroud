@@ -94,3 +94,12 @@ An example of use case for AWS Lambda is:
 Another common use case are the CRON jobs, to excute the function after a period of tame (e.g., each hour.),
 
 It is important to highlight that Lambda pricing could be per **calls**, so your first 1k request are free, then you pay $0.20 per 1 millions request, or per **duration** in increments of 1 millisecond. The conclusion is: AWS Lambda usually is very cheap so it's very popular.
+
+API Gateway
+-----------
+
+API Gateway is a fully managed service for developers to easily create, publish, maintain, monitor and secure APIs. It is serverless and scalable to supports RESTful APIs and WebSocket APIs with security, user authentication, API throttling, API keys and more.
+
+The most common use case is build a serverless API as show the next image:
+
+![API Gateway](../assets/images/07F-api-gateway.png)
