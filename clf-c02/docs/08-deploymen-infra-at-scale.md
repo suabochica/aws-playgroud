@@ -66,3 +66,34 @@ export class MyEcsConstructStack extends core.Stack {
   });
 }
 ```
+
+Beanstalk
+---------
+
+Below, we have a typical 3 tier architecture for web application deployed in AWS:
+
+![Typical architecture](../assets/images/08C-typical-webapp.png)
+
+You can manage manually this infrastructure but keep in mind that as developer you always are looking for the next action:
+
+> All the developer want is for their code to run!
+
+Most of the web apps have the same architecture showed in the last image. Here is where Beanstalk comes. Elastic Beanstalk is a developer centric view of deploying an application on AWS. It uses all the components we have seen before, but it is all in one views that is easy to make sense of keeping full control over the configuration. So Beanstalk is **Platform as a Service**. Initially its free, but you have to pay for the underlying instances.
+
+As service Beanstalk is capable of:
+
+- Instance configuration and the OS is handled by Beanstalk.
+- Deployment strategy is configurable but performed by Beanstalk.
+- Capacity provisioning.
+- Load balancing and auto-scaling.
+- Application health monitoring and responsiveness.
+
+With this just the application code is responsibility of the developer.
+
+It offers 3 architecture models:
+
+1. Single instances deployment, good for development environments
+2. Load balances + Auto scale group, good for web apps in pre production and production environments.
+3. Auto scale group, good for non web apps in production (e.g., workers)
+
+Lastly, Beanstalk offer you health monitoring via and agent that pushes metrics to CloudWatch. It checks for app health, publishes health events.
