@@ -97,3 +97,10 @@ It offers 3 architecture models:
 3. Auto scale group, good for non web apps in production (e.g., workers)
 
 Lastly, Beanstalk offer you health monitoring via and agent that pushes metrics to CloudWatch. It checks for app health, publishes health events.
+
+Code Deploy
+-----------
+
+Code Deploy is a service to deploy our application automatically. It works with EC2 instances and on-premises servers. This means that it is an hybrid services. The servers or instances must be provisioned and configured ahead of time with the code deploy agent. A common use is the update versions between servers/instances as show the next image:
+
+![Code Deploy](../assets/images/08D-code-deploy.png)
