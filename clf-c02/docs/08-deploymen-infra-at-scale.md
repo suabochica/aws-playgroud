@@ -101,6 +101,52 @@ Lastly, Beanstalk offer you health monitoring via and agent that pushes metrics 
 Code Deploy
 -----------
 
-Code Deploy is a service to deploy our application automatically. It works with EC2 instances and on-premises servers. This means that it is an hybrid services. The servers or instances must be provisioned and configured ahead of time with the code deploy agent. A common use is the update versions between servers/instances as show the next image:
+Code Deploy is a service to **deploy** our application automatically. It works with EC2 instances and on-premises servers. This means that it is an hybrid services. The servers or instances must be provisioned and configured ahead of time with the code deploy agent. A common use is the update versions between servers/instances as show the next image:
 
 ![Code Deploy](../assets/images/08D-code-deploy.png)
+
+Code Commit
+-----------
+
+Before pushing the application code to servers, it needs to be **stored** somewhere. Developers usually store code in a repository, using the **git** technology, whose famous public offer is GitHub. However, AWS has a competing product called Code Commit with features like:
+
+- source control service that hosts git based repositories.
+- makes it easy to collaborate with others on code.
+- the code changes are automatically versioned.
+
+You get 3 benefits in comparison to Github: it is fully managed. It is scalable and high available and it is private, secure and integrated with AWS.
+
+Code Build
+----------
+
+The service is very explicit and it to **build** your code in the cloud. It compiles source code, run tests, and produces packages that are ready to be deployed (by code deploy for example) The next diagram shows the relation between code commit and code build:
+
+![Code Flow](../assets/images/08E-code-flow.png)
+
+The benefits are: fully manages and serverless. Continuously scalable and highly available. Security and yo pay-as-you-go pricing, so you pay for the build time.
+
+Code Pipeline
+-------------
+
+Code Pipeline is a service to **orchestrate** the different steps to have the code automatically pushed to production, following the basis of continuos integration and continuos delivery. The next diagram summarizes the context of code pipeline:
+
+![Code Pipeline](../assets/images/08F-code-pipeline.png)
+
+The key benefits is compatibility, fast deliveries and rapid updates.
+
+Code Artifact
+-------------
+
+Software packages depend on each other to be built, and new ones are created. Storing and retrieving these dependencies is called **artifact management**. Traditionally, you need to setup your own artifact management system and Code Artifact help you with this tas because is a secure, scalable and cost-effective artifact management for software development. Works with common dependency management tools such as maven, gradle for Java or npm for JavaScript. So developers can retrieves dependencies straight from Code Artifact.
+
+Code Star (Code Catalyst from 2024)
+-----------------------------------
+
+This services is a **unified user interface** to easily manage software development activities in one place. It is a quick way to get started correctly and set up the code suite of AWS. Even you can edit code in the cloud using Cloud9, as we will see in the next section.
+
+Cloud9
+------
+
+Cloud9 is a cloud integrated development environment (in short IDE) for writing, running and debugging code. Classic IDE like IntelliJ or VSCode are download on a computer before being used. A cloud IDE can be used within a web browser, meaning you can work on your projects form your office, home, or anywhere with internet no set up necessary. It also allows for code collaboration in real-time (i.e., pair programming) as show the next image:
+
+![C9](../assets/images/08G-c9.png)
