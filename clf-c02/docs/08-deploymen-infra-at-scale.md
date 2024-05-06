@@ -150,3 +150,18 @@ Cloud9
 Cloud9 is a cloud integrated development environment (in short IDE) for writing, running and debugging code. Classic IDE like IntelliJ or VSCode are download on a computer before being used. A cloud IDE can be used within a web browser, meaning you can work on your projects form your office, home, or anywhere with internet no set up necessary. It also allows for code collaboration in real-time (i.e., pair programming) as show the next image:
 
 ![C9](../assets/images/08G-c9.png)
+
+System Manager
+--------------
+
+System manager (in short SSM) helps you to manage **EC2** and **on-premises** systems at scale making it another hybrid service. The purpose of this manager is get operational insights about the state of your infrastructure. Their most important features are:
+
+- Patching automation for enhanced compliance.
+- Run commands across an entire fleet of servers.
+- Store parameter configuration with the SSM Parameter Store (more of this in coming section).
+
+It works for linux, windows, macOS and raspbian. The next image its a map of how SSM works.
+
+![SSM](../assets/images/08H-ssm.png)
+
+As you can see in the image, you need to install the SSM agent onto the systems we control. By default it is installed on Amazon AMI or some ubunutu AMI. If an instance cannot be controlled with SSM it probably an issue with the SSM agent. Thanks to the SSM agent, you can run commands, patch and configure the servers.
