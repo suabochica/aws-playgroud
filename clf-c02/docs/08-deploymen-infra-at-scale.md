@@ -165,3 +165,41 @@ It works for linux, windows, macOS and raspbian. The next image its a map of how
 ![SSM](../assets/images/08H-ssm.png)
 
 As you can see in the image, you need to install the SSM agent onto the systems we control. By default it is installed on Amazon AMI or some ubunutu AMI. If an instance cannot be controlled with SSM it probably an issue with the SSM agent. Thanks to the SSM agent, you can run commands, patch and configure the servers.
+
+Additionally, you can attach a session manager to your **EC2** and **on-premises** systems to start a secure shell over them. The next image summarize how this session works:
+
+![Session manager](../assets/images/08I-session-manager.png)
+
+Key points here are: you no need SSH access, bastion host, or SSH keys; The port 22 is not need giving us better security. You can send session log data to S3 or CloudWatch, and it is supported by linux, macOS and Windows.
+
+Parameter Store
+---------------
+
+Systems manager has a secure store for API keys, passwords, configurations and secrets. It is serverless, scalable, durable and offer a easy SDK. The control access permissions are using IAM and you will have version tracking and encryption over the values you store there. The next image shows the relations between applications and the parameter store:
+
+![Parameter store](../assets/images/08J-parameter-store.png)
+
+Summary
+-------
+
+For deployment services we have:
+
+- **Cloud Formation (AWS only)**
+  - Infrastructure as Code, works with almost all the AWS resources.
+  - Repeat across regions and accounts.
+- **Beanstalk (AWS only)**
+  - Platform as a Service, limited to certain programming languages or docker.
+  - Deploy code consistently with a known architecture.
+- **Code Deploy (Hybrid)**: deploy and upgrade any application onto servers.
+- **Systems Manager (Hybrid)**: patch, configure and run commands at scale.
+
+For developer service we saw:
+
+- **Code Commit**: Store code in private git repository.
+- **Code Build**: Build and test code in AWS.
+- **Code Deploy**: Deploy code onto servers.
+- **Code Pipeline**: Orchestration of pipeline from code to build to deploy.
+- **Code Artifact**: Store software packages/dependencies in AWS.
+- **Code Star**: Unified view for allowing developers to do CI/CD and code.
+- **Cloud 9**: Cloud IDE with collaboration.
+- **AWS SDK**: Define your cloud infrastructure using a programming language.
