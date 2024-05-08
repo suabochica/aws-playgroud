@@ -14,3 +14,12 @@ Index
 - **Cloud Front (Global CDN)**: Replicate part of your application to AWS edge locations and cache common request to decrease latency.
 - **S3 Transfer Acceleration**: Accelerate global uploads and downloads into Amazon S3.
 - **AWS Global Accelerator**: Improve global application availability and performance using AWS global network.
+
+Route 53
+--------
+
+![Diagram for a record](../assets/images/09A-diagram.png)
+
+![Simple and weighted policies](../assets/images/09B-simple-weighted.png)
+
+![Latency and failover policies](../assets/images/09C-latency-failover.png)
