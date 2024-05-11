@@ -63,3 +63,12 @@ S3 cross region replication:
 - File are updated in near real-time.
 - Read only.
 - Great for dynamic content that needs to be available at low latency in few regions.
+
+S3 Transfer Acceleration
+------------------------
+
+This service increase the transfer speed by moving the file to an AWS edge location which will forward the data to the S3 bucket in the target region. The next image map this behavior:
+
+![Transfer Acceleration](../assets/images/09F-transfer-acceleration.png)
+
+The cool thing is that there is a [S3 Transfer Accelerator tool](http://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html) to test.
