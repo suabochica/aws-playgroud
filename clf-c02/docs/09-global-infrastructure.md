@@ -72,3 +72,8 @@ This service increase the transfer speed by moving the file to an AWS edge locat
 ![Transfer Acceleration](../assets/images/09F-transfer-acceleration.png)
 
 The cool thing is that there is a [S3 Transfer Accelerator tool](http://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html) to test.
+
+AWS Global Accelerator
+----------------------
+
+Similar to transfer acceleration, we have a tool to measure the time consumed for [AWS Global Accelerator](https://speedtest.globalaccelerator.aws/#/) to load a file. The invitation is open to do your test.
