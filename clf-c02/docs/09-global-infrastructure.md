@@ -116,3 +116,14 @@ Below a list of the benefit of use outposts:
 - Easier migration from on premises to the cloud.
 - Fully managed service.
 - There are several services of the AWS ecosystem that works on it.
+
+AWS Wave Length
+---------------
+
+Wave length zones are infrastructure deployments embedded within the telecommunications providers data centers at the edge of the 5G networks. It brings AWS services to the edge of the 5G networks like EC2, EBS, VPC, etc. Their purpose is offer ultra low latency applications through 5G networks and the traffic doesn't leave the communication service provider's network.
+
+Take leverage of high bandwidth and secure connection to the parent AWS region. There are no additional charges or services agreements. Their use cases are: smart cities, ML-assisted diagnostics, connected vehicles, interactive live video streams, AR/VR and real time gaming.
+
+The next image maps the use of wave length:
+
+![Wave Length](../assets/images/09I-wave-length.png)
