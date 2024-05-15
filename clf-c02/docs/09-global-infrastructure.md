@@ -28,7 +28,7 @@ The next diagram summarize how the DNS works.
 
 ![Diagram for a record](../assets/images/09A-diagram.png)
 
-We have to keep in mind a high level of the routing policies explainend in the next 2 images.
+We have to keep in mind a high level of the routing policies explained in the next 2 images.
 
 ![Simple and weighted policies](../assets/images/09B-simple-weighted.png)
 
@@ -47,7 +47,7 @@ Cloud front could have two origins; S3 bucket or custom HTTP origin. The S3 buck
 
 For custom origin we can use cloud front as application load balancer, a copy of a EC2 instance or a S3 website enabling first the bucket as static.
 
-![Cloud Front Custom Origin](../assets/images/09E-cfront-high-level.png)
+![Cloud Front Custom Origin](../assets/images/09E-cloudfront-high-level.png)
 
 With this description is common get confusions between cloud front and S3 cross origin replication. Below is a list with the difference between them.
 
@@ -154,3 +154,24 @@ Below is a group of 4 types or architectures for global application evaluated wi
 ![Multi Region, Active-Passive](../assets/images/09M-mr-ap.png)
 
 ![Multi Region, Active-Active](../assets/images/09N-mr-aa.png)
+
+Summary
+-------
+
+For global infrastructure we have:
+
+- **Global DNS: Route 53**
+  - Great to route users to the closest deployment with least latency.
+  - Great to disaster recovery.
+- **Global Content Delivery Network: Cloud Front**
+  - Replicate part of your application to AWS edge location and decrease latency.
+  - Cache common request for improve user experience and decrease latency.
+- **S3 Transfer Acceleration**: accelerate global uploads & downloads to Amazon S3.
+- **AWS Global Accelerator**: improve global application availability and performance using the AWS global network.
+- **AWS Outposts**: deploy outposts racks in your own data centers to extend AWS service.
+- **AWS Wave Length**
+  - Brings AWS services to the edge of the 5G networks.
+  - Ultra low latency applications.
+- **AWS Local Zones**
+  - Brings AWS resources closer to your users.
+  - Good for latency-sensitive applications.
