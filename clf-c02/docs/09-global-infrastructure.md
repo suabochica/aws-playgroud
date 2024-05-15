@@ -106,7 +106,7 @@ Outposts service has relevance when we talking about hybrid cloud. Hybrid cloud 
 
 AWS outposts are **server racks** that offers the same AWS infrastructure, services APIs & tools to build your own applications on premises just as in the cloud. So AWS will set up and manage outposts racks within your on premises infrastructure and you can start leveraging AWS service on premises. Now, you are responsible for the outposts racks physical security. The next images show the interactions in a hybrid cloud.
 
-![Hybrid cloud](../assets/images/09G-hybrid-cloud.png)
+![Hybrid cloud](../assets/images/09H-hybrid-cloud.png)
 
 Below a list of the benefit of use outposts:
 
@@ -141,3 +141,16 @@ Here we have the next set up:
 - AWS local zones: Boston.
 
 Keep in mind that there are some regions where you cannot extend to local zones because there are not available.
+
+Global Application Architecture
+-------------------------------
+
+Below is a group of 4 types or architectures for global application evaluated with 3 criteria: availability, latency and set up difficulty.
+
+![Single Region, Single AZ](../assets/images/09K-sr-saz.png)
+
+![Single Region, Multi AZ](../assets/images/09L-sr-maz.png)
+
+![Multi Region, Active-Passive](../assets/images/09M-mr-ap.png)
+
+![Multi Region, Active-Active](../assets/images/09N-mr-aa.png)
