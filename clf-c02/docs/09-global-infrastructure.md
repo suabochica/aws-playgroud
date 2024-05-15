@@ -127,3 +127,17 @@ Take leverage of high bandwidth and secure connection to the parent AWS region. 
 The next image maps the use of wave length:
 
 ![Wave Length](../assets/images/09I-wave-length.png)
+
+AWS Local Zones
+---------------
+
+Local zones are places for AWS to compute, storage, database and other selected AWS services closer to end users to run latency-sensitive applications. So, you can extend your VPC to more locations. The next image is an example of local zone:
+
+![Local Zones](../assets/images/09J-local-zones.png)
+
+Here we have the next set up:
+
+- AWS region: N.Virginia (us-east-1)
+- AWS local zones: Boston.
+
+Keep in mind that there are some regions where you cannot extend to local zones because there are not available.
