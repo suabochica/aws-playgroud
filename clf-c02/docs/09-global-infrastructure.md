@@ -76,4 +76,43 @@ The cool thing is that there is a [S3 Transfer Accelerator tool](http://s3-accel
 AWS Global Accelerator
 ----------------------
 
+The global accelerator improve the **availability** and **performance** of an application using the AWS network. It leverage the AWS internal network to optimize the route to you application reaching until 60% of improvement. It creates 2 anycast IP for your application and traffic is sent through edge location. The edge locations send the traffic to your application. The next image illustrate this description:
+
+![Global Accelerator](../assets/images/09G-global-accelerator.png)
+
+There is a confusion between global accelerator and cloud front. They both use the AWS global network and its edge locations around the world. Also, they are integrated with AWS shield for DDoS protection. However:
+
+Cloud front - content delivery network
+
+- Improves performance for your cacheable content (such as images and videos)
+- Content is served at the edge
+
+While global accelerator:
+
+- No caching, proxying packets at the edge to applications running in one or more AWS regions.
+- Improves performance for a wide range of applications over TCP or UDP.
+- Good for HTTP use cases that require static IP addresses.
+- Good for HTTP use cases that require deterministic, fast regional failover.
+
 Similar to transfer acceleration, we have a tool to measure the time consumed for [AWS Global Accelerator](https://speedtest.globalaccelerator.aws/#/) to load a file. The invitation is open to do your test.
+
+AWS Outposts
+------------
+
+Outposts service has relevance when we talking about hybrid cloud. Hybrid cloud are businesses that keep an on premises infrastructure alongside a cloud infrastructure. Therefore, we have two ways of dealing with IT systems:
+
+- One for the AWS cloud (using the AWS console, CLI, and AWS APIs).
+- One for their on premises infrastructure.
+
+AWS outposts are **server racks** that offers the same AWS infrastructure, services APIs & tools to build your own applications on premises just as in the cloud. So AWS will set up and manage outposts racks within your on premises infrastructure and you can start leveraging AWS service on premises. Now, you are responsible for the outposts racks physical security. The next images show the interactions in a hybrid cloud.
+
+![Hybrid cloud](../assets/images/09G-hybrid-cloud.png)
+
+Below a list of the benefit of use outposts:
+
+- Low latency access to on premises systems.
+- Local data processing.
+- Data residency.
+- Easier migration from on premises to the cloud.
+- Fully managed service.
+- There are several services of the AWS ecosystem that works on it.
