@@ -54,3 +54,24 @@ Amazon MQ
 Amazon message broker is a managed service for to migrate to the cloud tools like RabbitMQ and ActiveMQ. Keep in mind that SQS and SNS are cloud native services with proprietary protocols with AWS. For the other hand, traditional applications running from on premises may use open protocols like MQTT, WSS or Openwire. So instead of re-engineering the application to use SQS and SNS, and alternative is Amazon MQ.
 
 There are some trade offs with this approach; Amazon MQ does not scale as much as SQS/SNS. If it runs on server, you can run in Multi-AZ with failover. Also, it uses queue and topic feature in the same tool.
+
+Summary
+-------
+
+SQS:
+
+- Queue service in AWS.
+- Multiple producer, messages are kept up to 14 days.
+- Multiple consumers share the read and delete message when are done.
+- Used to decouple application in AWS.
+
+SNS:
+
+- Notification service in AWS.
+- Subscribers: email, lambda, SQS, HTTP(S), and mobile.
+- Multiple subscribers send all message to all of them.
+- No message retention.
+
+Kinesis, real time data streaming, persistence and analysis.
+
+Amazon MQ as managed message broker for ActiveMQ and RabbitMQ in the cloud.
