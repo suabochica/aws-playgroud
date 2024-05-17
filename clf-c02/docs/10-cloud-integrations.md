@@ -47,3 +47,10 @@ Simple Notification service solve the scenario when you want to send one message
 ![SNS](../assets/images/10C-sns.png)
 
 When SNS publish a notification it can have the next subscribers: SQS, lambda, kinesis, emails, SMS and HTTP(S) endpoints.
+
+Amazon MQ
+---------
+
+Amazon message broker is a managed service for to migrate to the cloud tools like RabbitMQ and ActiveMQ. Keep in mind that SQS and SNS are cloud native services with proprietary protocols with AWS. For the other hand, traditional applications running from on premises may use open protocols like MQTT, WSS or Openwire. So instead of re-engineering the application to use SQS and SNS, and alternative is Amazon MQ.
+
+There are some trade offs with this approach; Amazon MQ does not scale as much as SQS/SNS. If it runs on server, you can run in Multi-AZ with failover. Also, it uses queue and topic feature in the same tool.
