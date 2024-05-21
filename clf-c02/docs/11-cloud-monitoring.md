@@ -36,3 +36,19 @@ The key feature is that it enable real time monitoring of log and you can adjust
 Let's review in detail the cloud watch logs for EC2. By default, no logs from EC2 instances will go to cloud watch. You need to run a cloud watch agent on EC2 to push the log files you want. Make sure that IAM permissions are correct, and these log agent can be set up on-premises too. The next image summarizes this description.
 
 ![Logs](../assets/images/11B-cw-logs.png)
+
+Event Bridge
+------------
+
+Event Bridge it used to be called cloud watch event is a service to set up rule for react to event happening within AWS:
+
+- Schedule: schedule scripts to run cron jobs (e.g., every hour trigger a script on lambda function)
+- Event pattern: set rules to react to a service to doing something (e.g., if someone log as root user, set a message in a SNS topic with email notification)
+
+The next image summarize all the possible scenarios we can handle with event bridge:
+
+![Rules](../assets/images/11C-cw-event-rules.png)
+
+By default event bridge works with a default event bus for events that happening inside AWS. But, it is possible to receive events from partners like zendesk or datadog an use the partner event bus and react to events happening outside AWS as well. Also, you could plug in your own custom application that would send their own events to you own custom bus to write any kind of integration you want and extends the event bridge capabilities.
+
+There is a schema registry to model the event and see what it look like via data types. You can also archive all the vents sent to an event bus indefinitely or for a set period, then you can replay these archived events.
