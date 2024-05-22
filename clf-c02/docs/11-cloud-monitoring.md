@@ -52,3 +52,25 @@ The next image summarize all the possible scenarios we can handle with event bri
 By default event bridge works with a default event bus for events that happening inside AWS. But, it is possible to receive events from partners like zendesk or datadog an use the partner event bus and react to events happening outside AWS as well. Also, you could plug in your own custom application that would send their own events to you own custom bus to write any kind of integration you want and extends the event bridge capabilities.
 
 There is a schema registry to model the event and see what it look like via data types. You can also archive all the vents sent to an event bus indefinitely or for a set period, then you can replay these archived events.
+
+Cloud Trail
+-----------
+
+Cloud Trail is a service that provides **governance, compliance and audit** for your AWS account and it is enabled by default. Here you can gen an history of events/API calls made withing your AWS account by: console, SDK, CLI and AWS services.
+
+You can put logs from cloud trail to cloud watch logs or S3. A trail can be applied to all regions (default) o a single region. If a resource is deleted in AWS, investigate cloud trail first.
+
+X-Ray
+-----
+
+Commonly here is the process to debugging in production:
+
+1. Test locally.
+2. Add log statements everywhere.
+3. Re-deploy in production.
+
+Log formats differ across applications and log analysis is hard and debugging one big monolith could be _easy_ but distributed service are _hard_ because no there are no common of your entire architecture. Here comes AWS X-Ray. The next image is an example of a visual analysis of 4 applications.
+
+![Visual analysis](../assets/images/11D-visual-analysis.png)
+
+With AWS X-Ray you will have a troubleshooting performance (e.g., bottlenecks). Also, you understand dependencies in a microservices architecture, pinpoint request behavior, find error and exceptions, check users impacted by the error and is useful for solve question like were I am throttled?
