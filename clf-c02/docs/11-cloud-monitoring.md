@@ -98,3 +98,19 @@ On the other hand, code guru profiler helps to understand the runtime behavior o
 - Anomaly detection.
 
 It supports application running on AWS or on-premises and it is a minimal overhead on application.
+
+Health Dashboard
+----------------
+
+The health dashboards is manage in two parts:
+
+- Services
+- Accounts
+
+The service part shows all regions and all services health with historical information for each day. It has a RSS feed you can subscribe to and previously was called AWS Service Health Dashboard. The next image is an screenshot of this service:
+
+![Service History](../assets/images/11F-service-history.png)
+
+The account part provides **alerts and remediation guidance** when AWS is experiencing events that may impact you. While the service health dashboard displays the general status of AWS services, account health dashboard gives you a personalized view into the performance and availability of the AWS services underlying your AWS resources.
+
+The dashboard shows relevant and timely information to help you manage events in progress and provides proactive notification to help you plan for scheduled activities. We can aggregate data from an entire AWS organization and it previously was called AWS personal health dashboard.
