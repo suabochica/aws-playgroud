@@ -74,3 +74,27 @@ Log formats differ across applications and log analysis is hard and debugging on
 ![Visual analysis](../assets/images/11D-visual-analysis.png)
 
 With AWS X-Ray you will have a troubleshooting performance (e.g., bottlenecks). Also, you understand dependencies in a microservices architecture, pinpoint request behavior, find error and exceptions, check users impacted by the error and is useful for solve question like were I am throttled?
+
+Code Guru
+---------
+
+Code Guru is a machine learning powered service for **automated code review** and **application performance recommendation**. It provides two functionalities:
+
+- Reviewer, automated code review for static code analysis in development stage.
+- Profiler, visibility about application performance during runtime in production.
+
+The next diagram shows a pipeline that use these both features:
+
+![Reviewer and Profiler](../assets/images/11E-reviewer-profiler.png)
+
+With code guru review you identify critical issues, security vulnerabilities, and hard to find bugs (e.g., common coding best practices, resources leaks, security detection and input validation). It uses machine learning and automated reasoning. It use hard learned lessons across millions of code reviews on 1000s of open-source and amazon repositories and have integrations with GitHub, Bitbucket and CodeCommit.
+
+On the other hand, code guru profiler helps to understand the runtime behavior of your application (e.g., identify if your application is consuming excessive CPU capacity on logging routine). There feature are:
+
+- identify and remove code inefficiencies.
+- improve application performance, like reduce CPU utilization.
+- Decrease compute costs.
+- Provides heap summary, identifying which objects using up memory.
+- Anomaly detection.
+
+It supports application running on AWS or on-premises and it is a minimal overhead on application.
