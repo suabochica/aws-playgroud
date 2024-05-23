@@ -114,3 +114,27 @@ The service part shows all regions and all services health with historical infor
 The account part provides **alerts and remediation guidance** when AWS is experiencing events that may impact you. While the service health dashboard displays the general status of AWS services, account health dashboard gives you a personalized view into the performance and availability of the AWS services underlying your AWS resources.
 
 The dashboard shows relevant and timely information to help you manage events in progress and provides proactive notification to help you plan for scheduled activities. We can aggregate data from an entire AWS organization and it previously was called AWS personal health dashboard.
+
+Summary
+-------
+
+Cloud Watch:
+
+- **Metrics**: monitor the performance of AWS services and billing metrics.
+- **Alarms:** automate notification, perform EC2 action, notify to SNS based on metric.
+- **Logs:** collect log files from EC2 instances, servers, lambda functions, etc.
+- **Events:** react to events in AWS, or trigger a rule on a schedule.
+
+Cloud Trail:
+
+- **Regular:** audit API calls made within your AWS account.
+- **Insights:** automated analysis of your cloud trail events.
+
+X-Ray, trace request made through your distributed applications.
+
+AWS Dashboards:
+
+- **Health Dashboard:** status of all AWS services across all regions.
+- **Account Dashboards:** AWS events that impact your infrastructure.
+
+Amazon Code Guru, automated code reviews and application performances recommendations.
