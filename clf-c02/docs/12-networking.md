@@ -19,3 +19,16 @@ The internet protocol (in short IP) has two versions: 4 and 6. The version 4 ena
 There is Elastic IP that allows you to attach a fixed public IPv4 address to EC2 instance. However, all public IPv4 on AWS will be charged **$0.005** per hour including elastic IP. The free tier is about 750 hours usage per month.
 
 The version 6 enables 3.4 x 10^38 addresses. Every IP address is public in AWS, this means that the is no a private range. It is free in AWS (e.g., 2001:db8:3333:4444:cccc:dddd:eeee:ffff).
+
+VPC, Subnet, Internet Gateway and NAT Gateways
+----------------------------------------------
+
+A **virtual private cloud (in short VPC)** is a private network to deploy your resources and is an regional resources. **Subnets** allow you to partition you inside you VPC and is an availability zone resource. A **public subnet** is a subnet that is accessible from the internet. Here you set up your EC2 instances. For the other hand, the **private subnet**  is not accessible from the internet. Here you can set up your databases. To define access to the internet and between subnets, you use route tables.
+
+The **internet gateways** helps our VPC instances to connect to internet. Public subnets have a rout to the internet gateway, The **network address translation (in short NAT) gateways** are managed by AWS but the **NAT instances** are self-managed and they allow your instances in your private subnets to access the internet while remaining private.
+
+The next image recap the description of these concepts.
+
+![Network Map](../assets/images/12A-www-igw-nat.png)
+
+The default VPC provided by AWS have not private subnet and then neither NAT gateways. A good resource to check the range of IPs available fo a sub net is [CIDR](https://cidr.xyz).
