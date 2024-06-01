@@ -32,3 +32,20 @@ The next image recap the description of these concepts.
 ![Network Map](../assets/images/12A-www-igw-nat.png)
 
 The default VPC provided by AWS have not private subnet and then neither NAT gateways. A good resource to check the range of IPs available fo a sub net is [CIDR](https://cidr.xyz).
+
+Network Access Control List & Security Groups
+---------------------------------------------
+
+Network Access Control List (NACL in short) and security groups are lines of defense in our virtual private cloud. The next image shows how to NACL are the first line of defense and the security groups are the second one.
+
+![NACL & Security Groups](../assets/images/12B-nacl-and-security-groups.png)
+
+The next table recap the difference between each one:
+
+| Network ACL                                                                                                                                             | Security Group                                                                                                                                               |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Operates at subnet level                                                                                                                                | Operates at instance level                                                                                                                                   |
+| Supports allow and deny rules                                                                                                                           | Just support allow rules                                                                                                                                     |
+| Is stateless: return traffic must be explicitly allowed by rules                                                                                        | Is statefull: return traffic is automatically allowed, regardless of any rules                                                                               |
+| We process rules in number order when deciding whether to a allow traffic                                                                               | We evaluate all rules before deciding whether to allow traffic                                                                                               |
+| Automatically applies to all instances in the subnets it is associated with (therefore, you do not have to rely on users to specify the security group) | Applies to an instance only if someone specifies the security group when launching the instance, or associates the security group with the instance later on |
