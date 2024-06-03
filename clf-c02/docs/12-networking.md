@@ -49,3 +49,14 @@ The next table recap the difference between each one:
 | Is stateless: return traffic must be explicitly allowed by rules                                                                                        | Is statefull: return traffic is automatically allowed, regardless of any rules                                                                               |
 | We process rules in number order when deciding whether to a allow traffic                                                                               | We evaluate all rules before deciding whether to allow traffic                                                                                               |
 | Automatically applies to all instances in the subnets it is associated with (therefore, you do not have to rely on users to specify the security group) | Applies to an instance only if someone specifies the security group when launching the instance, or associates the security group with the instance later on |
+
+VPC flow logs and VPC peering
+------------------------------
+
+VPC flow logs works to capture information about IP traffic going into interfaces (i.e., VPC flow logs, subnet flow logs and elastic network interface flow logs). It helps to monitor and troubleshoot connectivity issus like connections between subnets to internet, subnets to subnets or internet to subnets. Also it captures network information from AWS managed interfaces as elastic load balancers, elastic cache, RDS, etc. All these data can go to S3, cloud watch logs and kinesis data firebase.
+
+The VPC peering connects two VPC, privately using the AWS network. Make them behave as if they were in the same network and the condition is not overlap CIDR (IP address range).
+
+VPC peering connection is not transitive, so must be established for each VPC that need to communicate as shows the next image.
+
+![VPC Peering](../assets/images/12C-vpc-peering.png)
