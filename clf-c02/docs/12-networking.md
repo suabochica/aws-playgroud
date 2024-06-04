@@ -60,3 +60,24 @@ The VPC peering connects two VPC, privately using the AWS network. Make them beh
 VPC peering connection is not transitive, so must be established for each VPC that need to communicate as shows the next image.
 
 ![VPC Peering](../assets/images/12C-vpc-peering.png)
+
+VPC Endpoints
+-------------
+
+All the AWS services we have seen so far are public. That means that when we connect to them, we are connecting to them publicy. There is a possibility to connect to these services using private AWS network instead publick internet network via VPC endpoints. This fives you enhanced security and lower latency to access AWS services.
+
+You have to types of endpoints:
+
+- VPC endpoint gateway, to connect to S3 and DynamoDB.
+- VPC endpoint interface, to connect to the rest of services (e.g., cloud watch).
+
+The next image sumarizes this distribution in a VPC:
+
+![VPC Endpoints](../assets/images/12D-vpc-endpoints)
+
+AWS Private Link
+----------------
+
+Private Link is part of the VPC endpoint services and it works to establich a connectivity between a service running within your VPC to third party VPCs directly and privately. It does not require VPC peering, internet gateway, NAT or route tables becaus it is from the AWS private network. However you need a network load balancer in the service VPC and a elastic network interface in the costumer VPC. There you have a secure and scalable way to expose a service to several VPCs. The next image recap this description:
+
+![AWS Private Link](../assets/images/12E-private-link)
