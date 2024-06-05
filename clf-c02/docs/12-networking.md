@@ -93,4 +93,11 @@ A site to site VPN connects on premises VPN to AWS. This connection is automatic
 
 ![Site to Site](../assets/images/12G-site-to-site-details.png)
 
-A direct connect establish a physical connection between on premises and AWS. This connection is private so it goes over a private network. The connection is secure and fast but take at least a month to establish.
+A direct connect establish a physical connection between on premises and AWS. This connection is private so it goes over a **private network**. The connection is secure and fast but take at least a month to establish.
+
+AWS Client VPN
+--------------
+
+This tool allows to connect from your computer using an AWS client VPN (e.g., OpenVPN) to your private network in AWS and on premises getting connection to EC2 instances over a private IP just as if you were in the private VPC network. This connection goes over publick internet. The next image summarizes how an AWS client VPN works:
+
+![AWS Client VPN](../assets/images/12H-aws-vpn-client.png)
