@@ -81,3 +81,16 @@ AWS Private Link
 Private Link is part of the VPC endpoint services and it works to establich a connectivity between a service running within your VPC to third party VPCs directly and privately. It does not require VPC peering, internet gateway, NAT or route tables becaus it is from the AWS private network. However you need a network load balancer in the service VPC and a elastic network interface in the costumer VPC. There you have a secure and scalable way to expose a service to several VPCs. The next image recap this description:
 
 ![AWS Private Link](../assets/images/12E-private-link)
+
+Direct Connect and Site to Site VPN
+------------------------------------
+
+In the world of hybrid cloud you will have an on-premise data center that you want to connect it to your VPC. To achieve this you have to options as shown the next image: site to site VPN or direct connect:
+
+![Site to Site VPN and DX](../assets/images/12F-site-to-site-and-dx.png)
+
+A site to site VPN connects on premises VPN to AWS. This connection is automatically encrypted andit goes over the **public internet**. In detail, the on premise part must use a customer gateway and the AWS part must use a virtual private gateway as shown the next image:
+
+![Site to Site](../assets/images/12G-site-to-site-details.png)
+
+A direct connect establish a physical connection between on premises and AWS. This connection is private so it goes over a private network. The connection is secure and fast but take at least a month to establish.
