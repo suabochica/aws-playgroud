@@ -101,3 +101,14 @@ AWS Client VPN
 This tool allows to connect from your computer using an AWS client VPN (e.g., OpenVPN) to your private network in AWS and on premises getting connection to EC2 instances over a private IP just as if you were in the private VPC network. This connection goes over publick internet. The next image summarizes how an AWS client VPN works:
 
 ![AWS Client VPN](../assets/images/12H-aws-vpn-client.png)
+
+Transit Gateway
+---------------
+
+Now that we now that we can connet our VPC together through peering connections and direct connection , we expose to have network topology complicated as shown the next image:
+
+![Network Topology](../assets/images/12I-network-topology.png)
+
+To avoid this mess we have transit gateway to encourage you for having transitive peering between thousands of VPCs and on premises via a hub-and-spoke connection (a.k.a. start). Here one single gateway will provide the functionality and it works with direct connect, gateway and VPN connections. The next image recap this propsal:
+
+![Transit Gateway](../assets/images/12J-transit-gw.png)
