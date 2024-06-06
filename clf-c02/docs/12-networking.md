@@ -73,14 +73,14 @@ You have to types of endpoints:
 
 The next image sumarizes this distribution in a VPC:
 
-![VPC Endpoints](../assets/images/12D-vpc-endpoints)
+![VPC Endpoints](../assets/images/12D-vpc-endpoints.png)
 
 AWS Private Link
 ----------------
 
 Private Link is part of the VPC endpoint services and it works to establich a connectivity between a service running within your VPC to third party VPCs directly and privately. It does not require VPC peering, internet gateway, NAT or route tables becaus it is from the AWS private network. However you need a network load balancer in the service VPC and a elastic network interface in the costumer VPC. There you have a secure and scalable way to expose a service to several VPCs. The next image recap this description:
 
-![AWS Private Link](../assets/images/12E-private-link)
+![AWS Private Link](../assets/images/12E-private-link.png)
 
 Direct Connect and Site to Site VPN
 ------------------------------------
@@ -112,3 +112,22 @@ Now that we now that we can connet our VPC together through peering connections 
 To avoid this mess we have transit gateway to encourage you for having transitive peering between thousands of VPCs and on premises via a hub-and-spoke connection (a.k.a. start). Here one single gateway will provide the functionality and it works with direct connect, gateway and VPN connections. The next image recap this propsal:
 
 ![Transit Gateway](../assets/images/12J-transit-gw.png)
+
+Summary
+-------
+
+- **VPC**: Virtual Private Cloud.
+- **Subnets:** tied to AZ, network partition of the VPC.
+- **Internet Gateway:** at the VPC level, it provide internet access.
+- **NAT Gateway:** provides internet access to private subnets.
+- **NACL:** staless, subnet rules for inbound and outbound.
+- **Security Groups**: stateful, operate at the EC2 instance level or ENI.
+- **VPC Peering**: connect two VPC with non overlapping IP ranges, nontransitive.
+- **Elastic IP** fixed public IPv4, ongoing cost if not in-use.
+- **VPC Endpoints**: provide private access to AWS services withing VPC.
+- **Private Link**: privately connect to a service in a 3rd party VPC.
+- **VPC Flow Logs**: network traffic logs.
+- **Site to Site VPN**: over public internet between on premises and AWS.
+- **Cliente VPN**: OpenVPN connection from your computer into your VPC.
+- **Direct Connect**: direct private connections to AWS.
+- **Transit Gateway**: Connect thousands of VPC and on premises networks together.
