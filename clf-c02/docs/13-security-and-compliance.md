@@ -35,3 +35,8 @@ AWS Network Firewall
 All these attack from layer 3 to 7 can be executed in a virtual private cloud. To protect a VPC you should use AWS network firewall because there you can inspect any direction and control VPC to VPC traffic, outbound/inbound to/from internet and direct connect and site-to-site VPN. The next image recap this description.
 
 ![AWS Network Firewall](../assets/images/13D-network-firewall.png)
+
+AWS Firewall Manager
+--------------------
+
+The firewall manager is used to manage security rules in all accounts of an AWS organization. The security policy is a common set security rules and a general use is on VPC security groups for EC2, application load balancer and more. Also, you can set WAF rules, AWS shield advanced and AWS network firewall. The rules are applied to new resources as they are created across all and future account in your organization.
