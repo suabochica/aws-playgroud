@@ -40,3 +40,25 @@ AWS Firewall Manager
 --------------------
 
 The firewall manager is used to manage security rules in all accounts of an AWS organization. The security policy is a common set security rules and a general use is on VPC security groups for EC2, application load balancer and more. Also, you can set WAF rules, AWS shield advanced and AWS network firewall. The rules are applied to new resources as they are created across all and future account in your organization.
+
+Penetration Testing
+-------------------
+
+Penetration testing is when you are trying to attack your own infrastructure to test your security.
+
+An AWS customer are welcome to carry out security assessments against their AWS infrastructure without prior approval for 8 services:
+
+1. EC2 instances, Nat Gateways, and  ELB
+2. Amazon RDS.
+3. Amazon CloudFront.
+4. Amazon Aurora.
+5. Amazon API Gateways.
+6. AWS Lambda.
+7. Amazon Lightsail resources.
+8. Amazon Elastic Beanstalk environments.
+
+Keep in mind that this list can increase over time.
+
+There are prohibited activities on AWS cloud. For example, execute DNS zone walking via Route 53 hosted zones. ,denial of services and port/protocol/request flooding.
+
+For any other simulated event you should contact via email the aws security team.
