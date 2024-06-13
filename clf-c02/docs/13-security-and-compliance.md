@@ -62,3 +62,14 @@ Keep in mind that this list can increase over time.
 There are prohibited activities on AWS cloud. For example, execute DNS zone walking via Route 53 hosted zones. ,denial of services and port/protocol/request flooding.
 
 For any other simulated event you should contact via email the aws security team.
+
+Encryption with KMS and CloudHSM
+--------------------------------
+
+Before to talk about encryption, let's review the next 2 concepts, data at rest and data in transit.
+
+Data at rest is data stored or archived on a device (e.g., hard disk, on a RDS instance, in S3 glacier deep archive, etc). Data in trainsit is data being moved from one location to another (e.g., transfer from on-premises to AWS, EC2 to DynamoDB, etc). This mean that data is transfered on the network. The idea is encrypt data in both states to protect it ash shown the next image:
+
+![Data in Rest and Data In Transit](../assets/images/13E-rest-transit.png)
+
+For encryption we leverage encryption keys.
