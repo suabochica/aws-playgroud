@@ -68,8 +68,15 @@ Encryption with KMS and CloudHSM
 
 Before to talk about encryption, let's review the next 2 concepts, data at rest and data in transit.
 
-Data at rest is data stored or archived on a device (e.g., hard disk, on a RDS instance, in S3 glacier deep archive, etc). Data in trainsit is data being moved from one location to another (e.g., transfer from on-premises to AWS, EC2 to DynamoDB, etc). This mean that data is transfered on the network. The idea is encrypt data in both states to protect it ash shown the next image:
+Data at rest is data stored or archived on a device (e.g., hard disk, on a RDS instance, in S3 glacier deep archive, etc). Data in transit is data being moved from one location to another (e.g., transfer from on-premises to AWS, EC2 to DynamoDB, etc). This mean that data is transferred on the network. The idea is encrypt data in both states to protect it ash shown the next image:
 
 ![Data in Rest and Data In Transit](../assets/images/13E-rest-transit.png)
 
 For encryption we leverage encryption keys.
+
+AWS Certificate Manager
+-----------------------
+
+AWS certificate manager (in short ACM) let you easily provision, manage and deploy secure sockets layer and transport layer security (SSL/TSL in short) certificates. It is used to provide in-flight encryption for websites (i.e., HTTPS). It supports public and private TLS certificates and is free of chare for public ones. The renewal is automatic and it has integrations with ELS, cloud front distributions and APIs on API gateway. The next image is the application of a TLS certificate on an application load balancer.
+
+![ACM](../assets/images/13F-acm.png)
