@@ -80,3 +80,14 @@ AWS Certificate Manager
 AWS certificate manager (in short ACM) let you easily provision, manage and deploy secure sockets layer and transport layer security (SSL/TSL in short) certificates. It is used to provide in-flight encryption for websites (i.e., HTTPS). It supports public and private TLS certificates and is free of chare for public ones. The renewal is automatic and it has integrations with ELS, cloud front distributions and APIs on API gateway. The next image is the application of a TLS certificate on an application load balancer.
 
 ![ACM](../assets/images/13F-acm.png)
+
+AWS Secrets Manager
+-------------------
+
+In Secrets Manager, a _secret_ consists of secret information, the _secret value_, plus metadata about the secret. A secret value can be a string or binary.
+
+To store multiple string values in one secret, we recommend that you use a JSON text string with key-value pairs
+
+AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their lifecycles. Many AWS services store and use secrets in Secrets Manager.
+
+Secrets Manager helps you improve your security posture, because you no longer need hard-coded credentials in application source code. Storing the credentials in Secrets Manager helps avoid possible compromise by anyone who can inspect your application or the components. You replace hard-coded credentials with a runtime call to the Secrets Manager service to retrieve credentials dynamically when you need them. The secrets are encrypted using KMS.
