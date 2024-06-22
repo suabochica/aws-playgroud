@@ -91,3 +91,42 @@ To store multiple string values in one secret, we recommend that you use a JSON 
 AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their lifecycles. Many AWS services store and use secrets in Secrets Manager.
 
 Secrets Manager helps you improve your security posture, because you no longer need hard-coded credentials in application source code. Storing the credentials in Secrets Manager helps avoid possible compromise by anyone who can inspect your application or the components. You replace hard-coded credentials with a runtime call to the Secrets Manager service to retrieve credentials dynamically when you need them. The secrets are encrypted using KMS.
+
+AWS Artifact
+------------
+
+AWS Artifact is a portal that provides customers with on-demand access to AWS compliance documentation and AWS agreement. So is not a service by itself. You can get access to:
+
+- Artifact reports: allows you to download AWS security and compliance documents from third-party auditors, like AWS ISO certification, payment card industry (PCI) or system and organization control (SOC).
+- Artifact agreements: allows you to review, accept, and track the status of AWS agreements such as the business associate addendum (BAA) or the health insurance portability and accountability (HIPAA) for an individual account in you organization.
+
+It is used to support internal audit or compliance.
+
+Guard Duty
+----------
+
+Guard Duty is an intelligent threat discovery to protect your AWS account using machine learning algorithm, anomaly detection and third party data. It has a 30 days trial and you don't need to install software. The input data includes:
+
+- Cloud Trail Management Events: unusual API calls, unauthorized deployments.
+- VPC Flow Logs: unusual internal traffic, unusual IP address.
+- DNS Logs: Compromised EC2 instances sending encoded data within DNS queries.
+- Optional feature: EKS audit logs, lambda, s3 data events and more.
+
+The next image summarizes the use of guard duty in AWS:
+
+![Guard Duty](../assets/images/13G-guard-duty.png)
+
+Amazon Inspector
+----------------
+
+Amazon inspector is a service for automated security assessments over EC2, container images pushed to ECR and lambda functions. It makes continuous scanning of the infrastructure only when needed and focus on package vulnerabilities and network reachability.
+
+With EC2 instances it leverage the AWS system manager agent, analyze against unintended network accessibility and analyze the running OS against known vulnerabilities.
+
+On ECR it perform assessment of container images as the are pushed.
+
+For lambda function identifies software vulnerabilities in function and package dependencies. Also it assess the function that are deployed.
+
+The inspector is integrated with AWS security hub, can generate reports and send the findings to amazon event bridge. A risk score is associated with all vulnerabilities for prioritization. The next diagram summarizes the inspector context.
+
+![Amazon Inspector](../assets/images/13H-inspector.png)
