@@ -130,3 +130,31 @@ For lambda function identifies software vulnerabilities in function and package 
 The inspector is integrated with AWS security hub, can generate reports and send the findings to amazon event bridge. A risk score is associated with all vulnerabilities for prioritization. The next diagram summarizes the inspector context.
 
 ![Amazon Inspector](../assets/images/13H-inspector.png)
+
+AWS Config
+----------
+
+This service helps you to auditing and recording compliance of your AWS resources and record configurations and change over time. You can store the configuration data in S3 and answer the next questions:
+
+- Is there unrestricted SSH access to my security groups?
+- Do my buckets have any public access?
+- How has my ALB configuration change over time?
+
+Then you can receive alerts via SNS notification for any changes. AWS config is a per region service and can be aggregated across regions an accounts.
+
+The next are the 3 key views of the config resource: View compliance of a resource over time:
+
+![Compliance view](../assets/images/13I-compliance-view.png)
+
+View of configuration of a resource over time.
+
+![Configuration view](../assets/images/13J-configuration-view.png)
+
+View CloudTrail API call if enabled.
+
+Amazon Macie
+------------
+
+Amazon Macie is a fully manage data security and data privacy service that use machine learning and pattern matching to discover and protect your sensitive data in AWS. It helps identify and alert you to sensitive data, such as personally identifiable information (in short PII)
+
+![Macie](../assets/images/13K-macie.png)
