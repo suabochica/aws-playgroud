@@ -158,3 +158,46 @@ Amazon Macie
 Amazon Macie is a fully manage data security and data privacy service that use machine learning and pattern matching to discover and protect your sensitive data in AWS. It helps identify and alert you to sensitive data, such as personally identifiable information (in short PII)
 
 ![Macie](../assets/images/13K-macie.png)
+
+AWS Security Hub
+----------------
+
+The security hub is a central security tool to manage security across several AWS accounts and automate security checks. It is integrated with dashboards to showing current security and compliance status to quickly takes action adding alerts in predefined or personal findings format from various AWS services as show the next image:
+
+![Security Hun](../assets/images/13L-security-hub.png)
+
+Amazon Detective
+----------------
+
+Guard Duty, Macie and Security Hub are used to identify potential security issues. Sometimes these security issues require deeper analysis to isolate the root cause and take action.
+
+Amazon Detective analyzes, investigates and quickly identifies the root cause of security issues using machine learning and graphs collecting and precessing events from Cloud Trail and Guard Duty in a unified view with details and context to get the root cause.
+
+AWS Abuse
+---------
+
+In amazon you can report suspected AWS resources used for abusive or illegal purposes like:
+
+- Spam, receiving undesired emails from AWS owned IP address, websites and forums spammed by AWS resources.
+- Port scanning, sending packets to your ports to discover the unsecured ones.
+- DoS or DDoS attacks, AWS owned IP addresses attempting to overwhelm or crash your servers.
+- Intrusion attempt, logging in on your resources.
+- Hosting objectionable or copyrighted content, distributing illegal content without consent.
+- Distributing malware, to harm computers.
+
+In those cases, you can contact the AWS abuse team at abuse@amazonaws.com
+
+Root User Privileges
+--------------------
+
+The root user has complete access to all AWS services and resources, so it is important to lock away your AWS account root user access keys! As good practice is not use the root account for every day tasks, even administrative tasks. However it is important to keep in mind the actions that can be performed only by the root user:
+
+- Change account settings.
+- View certain tax invoices.
+- Close your AWS account.
+- Restore IAM user permission.
+- Change or cancel your AWS support plan.
+- Register as a seller in the reserved instance marketplace.
+- Configure an amazon S3 bucket to enable MFA.
+- Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID.
+- Sign up for GovCloud.
