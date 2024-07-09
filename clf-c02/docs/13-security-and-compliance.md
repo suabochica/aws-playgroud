@@ -5,9 +5,9 @@ To start with security and compliance let's review again the shared responsibili
 
 ![Shared Responsibility](../assets/images/13A-shared-responsibility.png)
 
-There are some shared controls like patch and configuration management, awareness and training that are no  in  the diagram.
+There are some shared controls like patch and configuration management, awareness and training that are no in the diagram.
 
-So for RDS is responsibility of **AWS** manage the underlying EC2 instance, disable the SSH access automate the database and system operation patching and audit  the underlying instance with their disk and functionalities. In the other hand, the **customer** responsibilities are check the ports/IP/security group inbound rules in database, the in database user creation an permissions, config private and public access to the database, ensure parameter groups or SSL connection, and database encryption setting.
+So for RDS is responsibility of **AWS** manage the underlying EC2 instance, disable the SSH access automate the database and system operation patching and audit the underlying instance with their disk and functionalities. In the other hand, the **customer** responsibilities are check the ports/IP/security group inbound rules in database, the in database user creation an permissions, config private and public access to the database, ensure parameter groups or SSL connection, and database encryption setting.
 
 DDoS Attack
 -----------
@@ -88,7 +88,7 @@ In Secrets Manager, a _secret_ consists of secret information, the _secret value
 
 To store multiple string values in one secret, we recommend that you use a JSON text string with key-value pairs
 
-AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their lifecycles. Many AWS services store and use secrets in Secrets Manager.
+AWS Secrets Manager helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their life cycle. Many AWS services store and use secrets in Secrets Manager.
 
 Secrets Manager helps you improve your security posture, because you no longer need hard-coded credentials in application source code. Storing the credentials in Secrets Manager helps avoid possible compromise by anyone who can inspect your application or the components. You replace hard-coded credentials with a runtime call to the Secrets Manager service to retrieve credentials dynamically when you need them. The secrets are encrypted using KMS.
 
@@ -201,3 +201,32 @@ The root user has complete access to all AWS services and resources, so it is im
 - Configure an amazon S3 bucket to enable MFA.
 - Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID.
 - Sign up for GovCloud.
+
+IAM Access Analyzer
+-------------------
+
+The IAM Access Analyzer find out which resources are shared externally (e.g., S3 buckets, KMS keys, SQS queues, etc.) defining zone of trust to keep clear where are the accesses outside zone of trusts. The next image summarizes the reach of the analyzer.
+
+![IAM Access Analyzer](../assets/images/13M-analyzer.png)
+
+Summary
+-------
+
+- **Shared responsibility on AWS**.
+- **Shield:** automatic DDoS protection plus 24/7 support for advanced.
+- **WAF:** firewall to filter incoming request based on rules.
+- **KMS:** encryption keys managed by aWS.
+- **CloudHSM:** hardware encryption, we manage encryption keys.
+- **AWS Certificate Manager**: provision, manage, and deploy SSL/TLS certificates.
+- **Artifact**: get access to compliance reports such as PCO, ISO, etc.
+- **Guard Duty** find malicious behavior with VPC, DNS and Cloud Trail logs.
+- **Inspector**: find software vulnerabilities in EC2, ECR images, and lambda functions.
+- **Network Firewall**: protect VPC against network attacks.
+- **Config**: track config changes and compliance against rules.
+- **Macie**: find sensitive data in amazon s3 buckets.
+- **Cloud Trail**: track API call made by users within account.
+- **AWS Security Hub**: gather security findings from multiple AWS accounts.
+- **Amazon Detective**: find the root cause of security issues or suspicious activities.
+- **Root user privileges**
+- **IAM Access Analyzer**: identify which resources are shared externally.
+- **Firewall Manager**: manage security rules across an organization.

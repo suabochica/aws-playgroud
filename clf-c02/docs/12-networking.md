@@ -46,7 +46,7 @@ The next table recap the difference between each one:
 |---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Operates at subnet level                                                                                                                                | Operates at instance level                                                                                                                                   |
 | Supports allow and deny rules                                                                                                                           | Just support allow rules                                                                                                                                     |
-| Is stateless: return traffic must be explicitly allowed by rules                                                                                        | Is statefull: return traffic is automatically allowed, regardless of any rules                                                                               |
+| Is stateless: return traffic must be explicitly allowed by rules                                                                                        | Is state full: return traffic is automatically allowed, regardless of any rules                                                                               |
 | We process rules in number order when deciding whether to a allow traffic                                                                               | We evaluate all rules before deciding whether to allow traffic                                                                                               |
 | Automatically applies to all instances in the subnets it is associated with (therefore, you do not have to rely on users to specify the security group) | Applies to an instance only if someone specifies the security group when launching the instance, or associates the security group with the instance later on |
 
@@ -120,14 +120,14 @@ Summary
 - **Subnets:** tied to AZ, network partition of the VPC.
 - **Internet Gateway:** at the VPC level, it provide internet access.
 - **NAT Gateway:** provides internet access to private subnets.
-- **NACL:** staless, subnet rules for inbound and outbound.
+- **NACL:** state less, subnet rules for inbound and outbound.
 - **Security Groups**: stateful, operate at the EC2 instance level or ENI.
-- **VPC Peering**: connect two VPC with non overlapping IP ranges, nontransitive.
+- **VPC Peering**: connect two VPC with non overlapping IP ranges, non-transitive.
 - **Elastic IP** fixed public IPv4, ongoing cost if not in-use.
 - **VPC Endpoints**: provide private access to AWS services withing VPC.
 - **Private Link**: privately connect to a service in a 3rd party VPC.
 - **VPC Flow Logs**: network traffic logs.
 - **Site to Site VPN**: over public internet between on premises and AWS.
-- **Cliente VPN**: OpenVPN connection from your computer into your VPC.
+- **VPN Client**: OpenVPN connection from your computer into your VPC.
 - **Direct Connect**: direct private connections to AWS.
-- **Transit Gateway**: Connect thousands of VPC and on premises networks together.
+- **Transit Gateway**: connect thousands of VPC and on premises networks together.
