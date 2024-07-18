@@ -56,3 +56,10 @@ Amazon Forecast
 It is a fully managed service that uses machine learning to deliver highly accurate forecasts (e.g., predict the future sales of a raincoat). It is 50% more accurate that looking at the data itself and reduce forecasting time from months to hours.
 
 ![Forecast](../assets/images/14C-forecast.png)
+
+Amazon Kendra
+-------------
+
+It is a fully managed document search service powered by machine learning. Extract answers from within a  document with natural language capabilities. Learn from  user interactions to promote  preferred results (i.e., incremental learning). It has the ability to manually fine-tune search results. The next diagram is an example to identify where is the IT support desk:
+
+![Kendra](../assets/images/14D-kendra.png)
