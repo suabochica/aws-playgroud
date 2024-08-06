@@ -63,3 +63,33 @@ Amazon Kendra
 It is a fully managed document search service powered by machine learning. Extract answers from within a  document with natural language capabilities. Learn from  user interactions to promote  preferred results (i.e., incremental learning). It has the ability to manually fine-tune search results. The next diagram is an example to identify where is the IT support desk:
 
 ![Kendra](../assets/images/14D-kendra.png)
+
+Amazon Personalize
+------------------
+
+Personalize is a fully ML-service to build apps with real-time personalized recommendation. As example, we have a personalized product recommendation based on a user that bought gardening tools, providing a possible next product to buy. It is used in amazon.com an is integrated to existing websites, applications, SMS, email marketing systems, and more. Some use cases are, retail stores, media and etertaiment. The next images summarizes the inputs/outputs of use Amazon Personalize.
+
+![Personalize](../assets/images/14E-personalize.png)
+
+Amazon Textract
+---------------
+
+Textract is a tool to automatically extract text, handwriting, and data from any scanned documents using AI and ML. It extract the data from forms and tebles, then read and process any type of document (e.g., PDFs, images, etc.) Their use cases are: financial services (e.g., invoices, financial reports), healthcare (e.g., medical records, insurance claims) and public sector (e.g., tax forms, ID, passports.), The next example is on a driver license.
+
+![Textract](../assets/images/14F-textract.png)
+
+Summary
+-------
+
+- **Rekognition:** face detection, labeling and celebrity recognition.
+- **Transcribe:** audio to text.
+- **Polly:** text to audio.
+- **Translate:** translations.
+- **Lex:** build conversational bots.
+- **Connect**: cloud contact center.
+- **Comprehend**: natural language processing.
+- **SageMaker:** machine learning for every developer and data scientist.
+- **Forecast**: build highly accurate forecast.
+- **Kendra:**: ML-powered search engine.
+- **Personalize:** real-time personalized recommendations
+- **Textract**: detect text and data in documents.
