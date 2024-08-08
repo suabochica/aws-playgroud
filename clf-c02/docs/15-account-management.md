@@ -18,9 +18,23 @@ Below, a image with 3 option to set the organization unit:
 
 A possible distribution on these boxes is represented in the next diagram.
 
-![Root OU](../assets/images/15b-root-ou.png)
+![Root OU](../assets/images/15B-root-ou.png)
 
 With service control policies you can whitelist or blacklist IAM actions applied at the organization unit or account level but not to the master account. The SCP is applied to all the users and roles of the account, including root and does not affect service linked roles (service linked roles enable other aWS service to integrate with aWS organizations). It must have an explicit allow that by default does not allow anything and some use cases are:
 
 - Restrict access to certain service (e.g., cannot use EMR).
 - Enforce PCI compliance by explicitly disabling services.
+
+Consolidated Billing
+--------------------
+
+This feature when is enabled provides 2  benefits:
+
+1. Combine usage.
+2. One bill.
+
+You can combine the usage across all AWS accounts in the AWS Organization to share the volume pricing, reserved instances and savings plans discounts. In the next image we have an example where an account B has 5 reserved EC2 instances but only have 3 available. The remaining 2 instances are taken from the account A that has 6 available instances:
+
+![Consolidated Billing](../assets/images/15C-consolidated-billing.png)
+
+One bill is grouped for all the aWS accounts in the aWS organization.
