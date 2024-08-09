@@ -38,3 +38,20 @@ You can combine the usage across all AWS accounts in the AWS Organization to sha
 ![Consolidated Billing](../assets/images/15C-consolidated-billing.png)
 
 One bill is grouped for all the aWS accounts in the aWS organization.
+
+Control Tower
+-------------
+
+Control Tower is an easy way to set up and govern secure and compliant multi account aWS environment based on best practices. It runs on top of aWS organizations to organize accounts and implement service control polices. Below, the benefits of control tower:
+
+- automate the set up of your environment in a few clicks.
+- Automate ongoing policy management using guardrails.
+- Detect policy violations and remediate them.
+- Monitor compliance through an interactive dashboards.
+
+Resource Access Manager (RAM)
+-----------------------------
+
+RAM is used to share aWS resources that you own with other aWS accounts in the same organization to avoid resource duplication. It supports resources like Aurora, VPC  subnets, transit gateway, route 53, EC2, and more. The next image is an example of how the resources access manager works for 2 EC2 instance can access to the shared load balancer.
+
+![RAM](../assets/images/15D-RAM.png)
