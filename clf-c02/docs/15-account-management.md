@@ -55,3 +55,10 @@ Resource Access Manager (RAM)
 RAM is used to share aWS resources that you own with other aWS accounts in the same organization to avoid resource duplication. It supports resources like Aurora, VPC  subnets, transit gateway, route 53, EC2, and more. The next image is an example of how the resources access manager works for 2 EC2 instance can access to the shared load balancer.
 
 ![RAM](../assets/images/15D-RAM.png)
+
+Service Catalog
+---------------
+
+New users in AWs have too many options and may create stacks that are not compliant with the rest of the organizations. Some users just want a quick self-service portal to launch a set of authorized products pre-defined by admins. It includes virtual machines, databases, storage options and more. To handle this you can use the AWS Service Catalog as shown the next image:
+
+![Service Catalog](../assets/images/15E-service-catalog.png)
